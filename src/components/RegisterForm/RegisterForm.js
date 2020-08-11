@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+//MaterialUI
+import { Button, TextField, Typography } from '@material-ui/core';
+
 class RegisterForm extends Component {
   state = {
     username: '',
@@ -18,60 +21,59 @@ class RegisterForm extends Component {
         password: this.state.password,
       },
     });
-  } // end registerUser
+  }; // end registerUser
 
-  handleInputChangeFor = propertyName => (event) => {
+  handleInputChangeFor = (propertyName) => (event) => {
     this.setState({
       [propertyName]: event.target.value,
     });
-  }
+  };
 
   render() {
     return (
-      <form
-        className="formPanel"
-        onSubmit={this.registerUser}
-      >
-        <h2>Register User</h2>
+      <form className="formPanel" onSubmit={this.registerUser}>
+        <Typography gutterBottom variant="h4" component="h2">
+          Register User
+        </Typography>
         {this.props.errors.registrationMessage && (
-          <h3
-            className="alert"
-            role="alert"
-          >
+          <h3 className="alert" role="alert">
             {this.props.errors.registrationMessage}
           </h3>
         )}
         <div>
-          <label htmlFor="username">
-            Username:
-            <input
-              type="text"
-              name="username"
-              value={this.state.username}
-              required
-              onChange={this.handleInputChangeFor('username')}
-            />
-          </label>
+          <TextField
+            variant="outlined"
+            id="outlined-basic"
+            type="text"
+            label="Username"
+            name="username"
+            value={this.state.username}
+            required
+            onChange={this.handleInputChangeFor('username')}
+          />
         </div>
         <div>
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              name="password"
-              value={this.state.password}
-              required
-              onChange={this.handleInputChangeFor('password')}
-            />
-          </label>
+          <TextField
+            variant="outlined"
+            label="Password"
+            type="password"
+            name="password"
+            value={this.state.password}
+            required
+            onChange={this.handleInputChangeFor('password')}
+          />
         </div>
         <div>
-          <input
+          <Button
+            variant="contained"
+            color="primary"
             className="register"
             type="submit"
             name="submit"
             value="Register"
-          />
+          >
+            Register
+          </Button>
         </div>
       </form>
     );

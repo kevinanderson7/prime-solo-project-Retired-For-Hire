@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import LoginForm from '../LoginForm/LoginForm';
 
+//MaterialUI
+import { Button } from '@material-ui/core';
+
 class LoginPage extends Component {
   render() {
     return (
@@ -10,13 +13,16 @@ class LoginPage extends Component {
         <LoginForm />
 
         <center>
-          <button
+          <Button
+            variant="contained"
             type="button"
             className="link-button"
-            onClick={() => {this.props.history.push('/registration')}}
+            onClick={() => {
+              this.props.history.push('/registration');
+            }}
           >
             Register
-          </button>
+          </Button>
         </center>
       </div>
     );

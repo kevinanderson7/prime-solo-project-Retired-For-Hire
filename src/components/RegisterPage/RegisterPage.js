@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+
+//MaterialUI
+import { Button } from '@material-ui/core';
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
@@ -17,13 +20,16 @@ class RegisterPage extends Component {
         <RegisterForm />
 
         <center>
-          <button
+          <Button
+            variant="contained"
             type="button"
             className="link-button"
-            onClick={() => {this.props.history.push('/login')}}
+            onClick={() => {
+              this.props.history.push('/login');
+            }}
           >
             Login
-          </button>
+          </Button>
         </center>
       </div>
     );
@@ -31,4 +37,3 @@ class RegisterPage extends Component {
 }
 
 export default connect(mapStoreToProps)(RegisterPage);
-

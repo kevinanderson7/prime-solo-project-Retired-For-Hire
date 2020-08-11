@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+//MaterialUI
+import { Button, TextField, Typography } from '@material-ui/core';
+
 class LoginForm extends Component {
   state = {
     username: '',
@@ -22,57 +25,58 @@ class LoginForm extends Component {
     } else {
       this.props.dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
-  } // end login
+  }; // end login
 
-  handleInputChangeFor = propertyName => (event) => {
+  handleInputChangeFor = (propertyName) => (event) => {
     this.setState({
       [propertyName]: event.target.value,
     });
-  }
+  };
 
   render() {
     return (
       <form className="formPanel" onSubmit={this.login}>
-        <h2>Login</h2>
+        <Typography gutterBottom variant="h4" component="h2">
+          Log in
+        </Typography>
         {this.props.store.errors.loginMessage && (
-          <h3
-            className="alert"
-            role="alert"
-          >
+          <h3 className="alert" role="alert">
             {this.props.store.errors.loginMessage}
           </h3>
         )}
         <div>
-          <label htmlFor="username">
-            Username:
-            <input
-              type="text"
-              name="username"
-              required
-              value={this.state.username}
-              onChange={this.handleInputChangeFor('username')}
-            />
-          </label>
+          <TextField
+            variant="outlined"
+            label="Username"
+            type="text"
+            name="username"
+            required
+            value={this.state.username}
+            onChange={this.handleInputChangeFor('username')}
+          />
         </div>
         <div>
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              name="password"
-              required
-              value={this.state.password}
-              onChange={this.handleInputChangeFor('password')}
-            />
-          </label>
+          <TextField
+            variant="outlined"
+            label="Password"
+            type="password"
+            name="password"
+            required
+            value={this.state.password}
+            onChange={this.handleInputChangeFor('password')}
+          />
         </div>
         <div>
-          <input
+          <Button
+            variant="contained"
+            color="primary"
             className="log-in"
             type="submit"
             name="submit"
             value="Log In"
-          />
+          >
+            Log In
+          </Button>
         </div>
       </form>
     );
