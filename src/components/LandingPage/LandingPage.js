@@ -12,7 +12,7 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 
 class LandingPage extends Component {
   state = {
-    heading: 'Class Component',
+    heading: 'Welcome to Retired For Hire!',
   };
 
   onLogin = (event) => {
