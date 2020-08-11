@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 //MaterialUI
-import { Button } from '@material-ui/core';
 
 const LogOutButton = (props) => (
   <button

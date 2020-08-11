@@ -38,7 +38,12 @@ const Nav = (props) => {
             <Link className="nav-link" to="/info">
               Info Page
             </Link>
-            <LogOutButton className="nav-link" />
+            <button
+              onClick={() => props.dispatch({ type: 'LOGOUT' })}
+              className="nav-link"
+            >
+              Log Out
+            </button>
           </>
         )}
         {/* Always show this link since the about page is not protected */}
