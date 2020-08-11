@@ -71,9 +71,6 @@ const UserPage = (props) => (
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
                 Learn More
               </Button>
             </CardActions>
@@ -100,9 +97,6 @@ const UserPage = (props) => (
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button size="small" color="primary">
-                Share
-              </Button>
               <Button size="small" color="primary">
                 Learn More
               </Button>
