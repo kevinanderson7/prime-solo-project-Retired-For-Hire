@@ -54,7 +54,11 @@ const UserPage = (props) => (
         <Box mt={4}>
           <Card>
             <CardActionArea>
-              <CardMedia />
+              <CardMedia
+                title="image of now hiring sign"
+                component="img"
+                src="/images/looking-to-hire.jpg"
+              />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   Looking to Hire?
