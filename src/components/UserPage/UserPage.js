@@ -81,8 +81,9 @@ const UserPage = (props) => (
           <Card>
             <CardActionArea>
               <CardMedia
-              // title="Contemplative Reptile"
-              // image="./retired-image.jpg"
+                title="retired individual"
+                component="img"
+                src="/images/retired-image.jpg"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
