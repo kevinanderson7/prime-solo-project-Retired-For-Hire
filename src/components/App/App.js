@@ -53,6 +53,13 @@ class App extends Component {
           <ProtectedRoute exact path="/info" component={InfoPage} />
           {/* This works the same as the other protected route, except that if the user is logged in,
             they will be redirected to the authRedirect path provided. */}
+          <ProtectedRoute exact path="/reviews" component={Reviews} />
+          <ProtectedRoute exact path="/checkout" component={Checkout} />
+          <ProtectedRoute
+            exact
+            path="/booking-confirmation"
+            component={BookingConfirmation}
+          />
           <ProtectedRoute
             exact
             path="/login"
@@ -70,13 +77,6 @@ class App extends Component {
             path="/home"
             authRedirect="/admin"
             component={LandingPage}
-          />
-          <ProtectedRoute exact path="/reviews" component={Reviews} />
-          <ProtectedRoute exact path="/checkout" component={Checkout} />
-          <ProtectedRoute
-            exact
-            path="/booking-confirmation"
-            component={BookingConfirmation}
           />
 
           {/* If none of the other routes matched, we will show a 404. */}
