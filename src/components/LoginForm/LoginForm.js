@@ -14,8 +14,6 @@ class LoginForm extends Component {
 
   login = (event) => {
     event.preventDefault();
-    console.log(this.props.store);
-
     if (this.state.username && this.state.password) {
       this.props.dispatch({
         type: 'LOGIN',
