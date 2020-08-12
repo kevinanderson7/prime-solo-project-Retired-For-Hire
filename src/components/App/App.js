@@ -27,6 +27,7 @@ import './App.css';
 import Reviews from '../Reviews/Reviews';
 import BookingConfirmation from '../BookingConfirmation/BookingConfirmation';
 import Checkout from '../Checkout/Checkout';
+import ListingsPage from '../ListingsPage/ListingsPage';
 
 class App extends Component {
   componentDidMount() {
@@ -55,6 +56,7 @@ class App extends Component {
             they will be redirected to the authRedirect path provided. */}
           <ProtectedRoute exact path="/reviews" component={Reviews} />
           <ProtectedRoute exact path="/checkout" component={Checkout} />
+          <ProtectedRoute exact path="/listings" component={ListingsPage} />
           <ProtectedRoute
             exact
             path="/booking-confirmation"

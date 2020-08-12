@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import { withRouter } from 'react-router-dom';
 
 //MaterialUI
 import {
@@ -63,6 +64,11 @@ const UserPage = (props) => {
   // const handleClose = () => {
   //   setOpen(false);
   // };
+
+  const handleClick = () => {
+    props.history.push('/listings');
+  };
+
   return (
     <Container maxWidth="lg">
       <Grid container justify="space-between" alignItems="center">
@@ -122,7 +128,7 @@ const UserPage = (props) => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button onClick={handleClick} size="small" color="primary">
                   Learn More
                 </Button>
                 {/* <Modal
@@ -244,4 +250,4 @@ const UserPage = (props) => {
 };
 
 // this allows us to use <App /> in index.js
-export default connect(mapStoreToProps)(UserPage);
+export default connect(mapStoreToProps)(withRouter(UserPage));
