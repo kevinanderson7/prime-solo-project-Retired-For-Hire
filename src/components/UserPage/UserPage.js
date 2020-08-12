@@ -16,9 +16,9 @@ import {
   CardContent,
   CardMedia,
   Box,
-  Modal,
-  Backdrop,
-  Fade,
+  // Modal,
+  // Backdrop,
+  // Fade,
   makeStyles,
 } from '@material-ui/core';
 
@@ -54,15 +54,15 @@ const useStyles = makeStyles((theme) => ({
 
 const UserPage = (props) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  // const handleOpen = () => {
+  //   setOpen(true);
+  // };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
   return (
     <Container maxWidth="lg">
       <Grid container justify="space-between" alignItems="center">
@@ -86,7 +86,7 @@ const UserPage = (props) => {
             <div className={classes.root}>
               <Paper elevation={3}>
                 <Typography component="h2" variant="h4">
-                  We're curious, are you:
+                  What would you like to do?
                 </Typography>
               </Paper>
             </div>
@@ -122,10 +122,10 @@ const UserPage = (props) => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button onClick={handleOpen} size="small" color="primary">
+                <Button size="small" color="primary">
                   Learn More
                 </Button>
-                <Modal
+                {/* <Modal
                   className={classes.modal}
                   open={open}
                   onClose={handleClose}
@@ -161,7 +161,7 @@ const UserPage = (props) => {
                       </Button>
                     </div>
                   </Fade>
-                </Modal>
+                </Modal> */}
               </CardActions>
             </Card>
           </Box>
@@ -197,6 +197,43 @@ const UserPage = (props) => {
                 <Button size="small" color="primary">
                   Learn More
                 </Button>
+                {/* <Modal
+                  className={classes.modal}
+                  open={open}
+                  onClose={handleClose}
+                  closeAfterTransition
+                  BackdropComponent={Backdrop}
+                  BackdropProps={{
+                    timeout: 500,
+                  }}
+                >
+                  <Fade in={open}>
+                    <div className={classes.paper}>
+                      <Typography
+                        component="h2"
+                        variant="h4"
+                        id="transition-modal-title"
+                      >
+                        Retired Details
+                      </Typography>
+                      <Typography
+                        component="p"
+                        variant="body1"
+                        id="transition-modal-description"
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Proin commodo sapien dolor, in vehicula orci ullamcorper
+                        sed. Aenean tincidunt euismod massa, nec convallis massa
+                        sollicitudin a. Proin quis erat interdum sapien ornare
+                        euismod. Aenean luctus metus elit. Duis auctor arcu ac
+                        ante rutrum ultrices. Mauris ac facilisis ant
+                      </Typography>
+                      <Button variant="contained" color="primary">
+                        Let's Go!
+                      </Button>
+                    </div>
+                  </Fade>
+                </Modal> */}
               </CardActions>
             </Card>
           </Box>

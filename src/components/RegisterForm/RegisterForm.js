@@ -9,6 +9,9 @@ class RegisterForm extends Component {
   state = {
     username: '',
     password: '',
+    firstName: '',
+    lastName: '',
+    email: '',
   };
 
   registerUser = (event) => {
@@ -19,6 +22,9 @@ class RegisterForm extends Component {
       payload: {
         username: this.state.username,
         password: this.state.password,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
       },
     });
   }; // end registerUser
@@ -68,6 +74,39 @@ class RegisterForm extends Component {
               value={this.state.password}
               required
               onChange={this.handleInputChangeFor('password')}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              variant="outlined"
+              label="First Name"
+              type="text"
+              name="firstName"
+              value={this.state.firstName}
+              required
+              onChange={this.handleInputChangeFor('firstName')}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              variant="outlined"
+              label="Last Name"
+              type="text"
+              name="lastName"
+              value={this.state.lastName}
+              required
+              onChange={this.handleInputChangeFor('lastName')}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              variant="outlined"
+              label="Email"
+              type="text"
+              name="email"
+              value={this.state.email}
+              required
+              onChange={this.handleInputChangeFor('email')}
             />
           </Grid>
           <Grid item>
