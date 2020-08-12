@@ -24,8 +24,18 @@ function* fetchUser() {
   }
 }
 
+function* addSkill(action) {
+  try {
+    yield axios.post('/api/user/seller', action.payload);
+    yield put({ type: 'FETCH_USER' });
+  } catch (error) {
+    console.log('Add seller skill Get resquest failed', error);
+  }
+}
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
+  yield takeLatest('ADD_SKILL', addSkill);
 }
 
 export default userSaga;

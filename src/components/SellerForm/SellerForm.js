@@ -22,18 +22,41 @@ class SellerForm extends Component {
       value: 'test category',
       label: 'test category',
     },
+    {
+      value: 'test category2',
+      label: 'test category2',
+    },
+    {
+      value: 'test category3',
+      label: 'test category3',
+    },
+    {
+      value: 'test category4',
+      label: 'test category4',
+    },
   ];
+  handleSkillAdd = () => {
+    this.props.dispatch({
+      type: 'ADD_SKILL',
+      payload: {
+        skillName: this.state.skillName,
+        category: this.state.category,
+        price: this.state.price,
+      },
+    });
+  };
 
   handleInputChangeFor = (propertyName) => (event) => {
     this.setState({
       [propertyName]: event.target.value,
     });
+    console.log(this.state);
   };
 
   render() {
     return (
       <form onSubmit={this.addSeller}>
-        <Grid container>
+        <Grid container alignItems="flex-start" spacing={2}>
           <Grid item>
             <TextField
               variant="outlined"
@@ -71,22 +94,21 @@ class SellerForm extends Component {
             <TextField
               variant="outlined"
               id="outlined-basic"
-              type="text"
+              type="number"
               label="Hourly Wage"
               name="price"
-              //   value={this.state.username}
+              value={this.state.price}
               required
+              helperText="In USD"
               onChange={this.handleInputChangeFor('price')}
             />
           </Grid>
           <Grid item>
             <Button
+              onClick={this.handleSkillAdd}
               variant="contained"
               color="primary"
-              className="register"
               type="submit"
-              name="submit"
-              value="Register"
             >
               Add Skill
             </Button>

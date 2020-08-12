@@ -32,11 +32,13 @@ class SellerPage extends Component {
             </Button>
           </Grid>
         </Grid>
-        <Grid container>
-          <Grid item>
-            <SellerForm />
+        <Box mt={3}>
+          <Grid container>
+            <Grid item>
+              <SellerForm />
+            </Grid>
           </Grid>
-        </Grid>
+        </Box>
       </Box>
     );
   }
