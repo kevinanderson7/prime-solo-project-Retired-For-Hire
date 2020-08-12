@@ -44,8 +44,9 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     '& > *': {
       margin: theme.spacing(1),
-      width: theme.spacing(100),
-      height: theme.spacing(16),
+      width: theme.spacing(60),
+      textAlign: 'center',
+      height: theme.spacing(5),
       padding: theme.spacing(2, 4, 3),
       justifyConent: 'center',
       alignItems: 'center',
@@ -70,7 +71,7 @@ const UserPage = (props) => {
   };
 
   return (
-    <Container maxWidth="lg">
+    <Box m={3}>
       <Grid container justify="space-between" alignItems="center">
         <Grid item>
           <Typography gutterBottom component="h1" variant="h3" id="welcome">
@@ -245,7 +246,7 @@ const UserPage = (props) => {
           </Box>
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 
