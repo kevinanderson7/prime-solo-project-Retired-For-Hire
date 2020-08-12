@@ -2,20 +2,38 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
-// Basic class component structure for React with default state
-// value setup. When making a new component be sure to replace
-// the component name TemplateClass with the name for the new
-// component.
+//MaterialUI
+import { Button, Typography, Grid, Box } from '@material-ui/core';
+
 class ListingsPage extends Component {
   state = {
     heading: 'Listings Page',
   };
 
+  handleBackClick = () => {
+    this.props.history.push('/admin');
+  };
+
   render() {
     return (
-      <div>
-        <h2>{this.state.heading}</h2>
-      </div>
+      <Box m={3}>
+        <Grid container justify="space-between">
+          <Grid item>
+            <Typography component="h2" variant="h4">
+              {this.state.heading}
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={this.handleBackClick}
+            >
+              Back
+            </Button>
+          </Grid>
+        </Grid>
+      </Box>
     );
   }
 }

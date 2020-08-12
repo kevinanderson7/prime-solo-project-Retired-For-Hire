@@ -65,7 +65,7 @@ const UserPage = (props) => {
   //   setOpen(false);
   // };
 
-  const handleClick = () => {
+  const handleHireClick = () => {
     props.history.push('/listings');
   };
 
@@ -128,7 +128,7 @@ const UserPage = (props) => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button onClick={handleClick} size="small" color="primary">
+                <Button onClick={handleHireClick} size="small" color="primary">
                   Learn More
                 </Button>
                 {/* <Modal
