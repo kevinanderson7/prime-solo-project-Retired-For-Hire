@@ -68,7 +68,7 @@ const UserPage = (props) => {
       <Grid container justify="space-between" alignItems="center">
         <Grid item>
           <Typography gutterBottom component="h1" variant="h3" id="welcome">
-            Welcome, {props.store.user.username}!
+            Welcome, {props.store.user.first_name}!
           </Typography>
         </Grid>
         <Grid item>
