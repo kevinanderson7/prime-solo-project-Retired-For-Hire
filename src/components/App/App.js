@@ -28,6 +28,7 @@ import Reviews from '../Reviews/Reviews';
 import BookingConfirmation from '../BookingConfirmation/BookingConfirmation';
 import Checkout from '../Checkout/Checkout';
 import ListingsPage from '../ListingsPage/ListingsPage';
+import SellerPage from '../SellerPage/SellerPage';
 
 class App extends Component {
   componentDidMount() {
@@ -57,6 +58,7 @@ class App extends Component {
           <ProtectedRoute exact path="/reviews" component={Reviews} />
           <ProtectedRoute exact path="/checkout" component={Checkout} />
           <ProtectedRoute exact path="/listings" component={ListingsPage} />
+          <ProtectedRoute exact path="/sellers" component={SellerPage} />
           <ProtectedRoute
             exact
             path="/booking-confirmation"

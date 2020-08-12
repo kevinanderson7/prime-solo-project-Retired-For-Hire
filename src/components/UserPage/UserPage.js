@@ -9,7 +9,6 @@ import {
   Typography,
   Paper,
   Grid,
-  Container,
   Card,
   Button,
   CardActionArea,
@@ -68,6 +67,9 @@ const UserPage = (props) => {
 
   const handleHireClick = () => {
     props.history.push('/listings');
+  };
+  const handleRetiredClick = () => {
+    props.history.push('/sellers');
   };
 
   return (
@@ -201,7 +203,11 @@ const UserPage = (props) => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button
+                  onClick={handleRetiredClick}
+                  size="small"
+                  color="primary"
+                >
                   Learn More
                 </Button>
                 {/* <Modal
