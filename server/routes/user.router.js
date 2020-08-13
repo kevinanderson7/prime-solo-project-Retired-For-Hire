@@ -59,4 +59,14 @@ router.post('/seller/skills', (req, res) => {
     .catch(() => res.sendStatus(500));
 });
 
+router.post('/seller/', (req, res) => {
+  const userId = req.body.userId;
+
+  const queryText = `INSERT INTO "sellers" (user_id) VALUES ($1);`;
+  pool
+    .query(queryText, [userId])
+    .then(() => res.sendStatus(201))
+    .catch(() => res.sendStatus(500));
+});
+
 module.exports = router;

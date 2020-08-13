@@ -48,14 +48,12 @@ class SellerForm extends Component {
         email: this.props.store.user.email_address,
       },
     });
-    // this.props.dispatch({
-    //   type: 'ADD_SELLER',
-    //   payload: {
-    //     firstName: this.props.store.user.first_name,
-    //     lastName: this.props.store.user.last_name,
-    //     email: this.props.store.user.email_address,
-    //   },
-    // });
+    this.props.dispatch({
+      type: 'ADD_SELLER',
+      payload: {
+        userId: this.props.store.user.id,
+      },
+    });
   };
 
   handleInputChangeFor = (propertyName) => (event) => {

@@ -12,9 +12,18 @@ function* addSkill(action) {
   }
 }
 
+function* addSeller(action) {
+  try {
+    yield axios.post('/api/user/seller', action.payload);
+    yield put({ type: 'FETCH_USER' });
+  } catch (error) {
+    console.log('Add seller post request failed', error);
+  }
+}
+
 function* sellerSaga() {
   yield takeLatest('ADD_SKILL', addSkill);
-  //   yield takeLatest('ADD_SELLER', addSeller);
+  yield takeLatest('ADD_SELLER', addSeller);
 }
 
 export default sellerSaga;
