@@ -33,6 +33,9 @@ class ListingsPage extends Component {
             </Button>
           </Grid>
         </Grid>
+        <Grid container>
+          <Grid item>List of sellers</Grid>
+        </Grid>
       </Box>
     );
   }

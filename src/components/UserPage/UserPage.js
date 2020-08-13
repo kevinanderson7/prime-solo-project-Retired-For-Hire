@@ -16,6 +16,8 @@ import {
   CardContent,
   CardMedia,
   Box,
+  Avatar,
+  IconButton,
   // Modal,
   // Backdrop,
   // Fade,
@@ -72,8 +74,19 @@ const UserPage = (props) => {
     props.history.push('/sellers');
   };
 
+  const handleProfileClick = () => {
+    console.log('clicking profile pic');
+  };
+
   return (
     <Box m={3}>
+      <Grid container justify="flex-end">
+        <Grid item>
+          <IconButton onClick={handleProfileClick}>
+            <Avatar alt="avatar" src={props.store.user.avatar} />
+          </IconButton>
+        </Grid>
+      </Grid>
       <Grid container justify="space-between" alignItems="center">
         <Grid item>
           <Typography gutterBottom component="h1" variant="h3" id="welcome">
@@ -85,6 +98,7 @@ const UserPage = (props) => {
             Your ID is: {props.store.user.id}
           </Typography>
         </Grid>
+
         <Grid>
           <LogOutButton className="log-in" />
         </Grid>

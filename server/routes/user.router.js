@@ -47,13 +47,12 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200);
 });
 
-router.post('/seller', (req, res) => {
+router.post('/seller/skills', (req, res) => {
   const skillName = req.body.skillName;
   const category = req.body.category;
   const price = req.body.price;
 
-  const queryText =
-    'INSERT INTO "skills" (skill_name, category, price) VALUES ($1, $2, $3) RETURNING id';
+  const queryText = `INSERT INTO "skills" (skill_name, category, price) VALUES ($1, $2, $3) RETURNING id;`;
   pool
     .query(queryText, [skillName, category, price])
     .then(() => res.sendStatus(201))
