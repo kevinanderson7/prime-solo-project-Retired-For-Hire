@@ -2,10 +2,12 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-router.get('/seller', (req, res) => {
-  const queryText = 'SELECT * FROM sellers';
+router.get('/seller/:id', (req, res) => {
+  const id = req.params.id;
+  console.log(req.params);
+  const queryText = 'SELECT * FROM sellers WHERE user_id=$1';
   pool
-    .query(queryText)
+    .query(queryText, [id])
     .then((response) => {
       res.send(response.rows);
     })
