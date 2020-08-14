@@ -47,26 +47,26 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200);
 });
 
-router.post('/seller/skills', (req, res) => {
-  const skillName = req.body.skillName;
-  const category = req.body.category;
-  const price = req.body.price;
+// router.post('/seller/skills', (req, res) => {
+//   const skillName = req.body.skillName;
+//   const category = req.body.category;
+//   const price = req.body.price;
 
-  const queryText = `INSERT INTO "skills" (skill_name, category, price) VALUES ($1, $2, $3) RETURNING id;`;
-  pool
-    .query(queryText, [skillName, category, price])
-    .then(() => res.sendStatus(201))
-    .catch(() => res.sendStatus(500));
-});
+//   const queryText = `INSERT INTO "skills" (skill_name, category, price) VALUES ($1, $2, $3) RETURNING id;`;
+//   pool
+//     .query(queryText, [skillName, category, price])
+//     .then(() => res.sendStatus(201))
+//     .catch(() => res.sendStatus(500));
+// });
 
-router.post('/seller/', (req, res) => {
-  const userId = req.body.userId;
+// router.post('/seller/', (req, res) => {
+//   const userId = req.body.userId;
 
-  const queryText = `INSERT INTO "sellers" (user_id) VALUES ($1);`;
-  pool
-    .query(queryText, [userId])
-    .then(() => res.sendStatus(201))
-    .catch(() => res.sendStatus(500));
-});
+//   const queryText = `INSERT INTO "sellers" (user_id) VALUES ($1);`;
+//   pool
+//     .query(queryText, [userId])
+//     .then(() => res.sendStatus(201))
+//     .catch(() => res.sendStatus(500));
+// });
 
 module.exports = router;

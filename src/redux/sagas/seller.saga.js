@@ -15,7 +15,8 @@ function* addSkill(action) {
 function* addSeller(action) {
   try {
     yield axios.post('/api/user/seller', action.payload);
-    yield put({ type: 'FETCH_USER' });
+    const response = yield axios.get('/api/user/seller');
+    yield put({ type: 'SET_SELLER', payload: response.data });
   } catch (error) {
     console.log('Add seller post request failed', error);
   }

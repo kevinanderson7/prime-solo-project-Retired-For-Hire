@@ -38,20 +38,16 @@ class SellerForm extends Component {
   handleSkillAdd = (event) => {
     event.preventDefault();
     this.props.dispatch({
+      type: 'ADD_SELLER',
+      payload: {
+        userId: this.props.store.user.id,
+      },
+    });
+    this.props.dispatch({
       type: 'ADD_SKILL',
       payload: {
         skillName: this.state.skillName,
         category: this.state.category,
-        price: this.state.price,
-        firstName: this.props.store.user.first_name,
-        lastName: this.props.store.user.last_name,
-        email: this.props.store.user.email_address,
-      },
-    });
-    this.props.dispatch({
-      type: 'ADD_SELLER',
-      payload: {
-        userId: this.props.store.user.id,
       },
     });
   };
