@@ -5,7 +5,7 @@ import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 //MaterialUI
-// import { AppBar } from '@material-ui/core';
+import { IconButton, Avatar } from '@material-ui/core';
 
 const Nav = (props) => {
   let loginLinkData = {
@@ -17,6 +17,9 @@ const Nav = (props) => {
     loginLinkData.path = '/admin';
     loginLinkData.text = 'Home';
   }
+  const handleProfileClick = () => {
+    console.log('clicking profile pic');
+  };
 
   return (
     // <AppBar position="static">
@@ -49,6 +52,9 @@ const Nav = (props) => {
         <Link className="nav-link" to="/about">
           About
         </Link>
+        <IconButton onClick={handleProfileClick}>
+          <Avatar alt="avatar" src={props.store.user.avatar} />
+        </IconButton>
       </div>
     </div>
     // </AppBar>

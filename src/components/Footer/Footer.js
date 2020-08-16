@@ -9,19 +9,21 @@ import { Typography, Grid } from '@material-ui/core';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 const Footer = () => (
-  <footer>
-    <Grid
-      container
-      direction="column-reverse"
-      justify="flex-start"
-      alignItems="center"
-    >
-      <Grid item>
-        <Typography component="h6" variant="body1">
-          &copy; Retired For Hire
-        </Typography>
+  <footer className="footer-class">
+    <div>
+      <Grid
+        container
+        direction="column-reverse"
+        justify="flex-start"
+        alignItems="center"
+      >
+        <Grid item>
+          <Typography component="h6" variant="body1">
+            &copy; Retired For Hire
+          </Typography>
+        </Grid>
       </Grid>
-    </Grid>
+    </div>
   </footer>
 );
 
