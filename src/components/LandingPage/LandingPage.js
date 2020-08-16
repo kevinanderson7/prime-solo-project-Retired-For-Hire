@@ -25,7 +25,6 @@ class LandingPage extends Component {
         <Typography gutterBottom component="h2" variant="h4">
           {this.state.heading}
         </Typography>
-
         <div className="grid">
           <div className="grid-col grid-col_8">
             <Typography component="p" variant="body1">

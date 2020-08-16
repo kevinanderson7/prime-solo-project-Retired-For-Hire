@@ -107,11 +107,9 @@ const UserPage = (props) => {
         <Grid container justify="center" alignItems="center">
           <Grid item>
             <div className={classes.root}>
-              <Paper elevation={3}>
-                <Typography component="h2" variant="h4">
-                  What would you like to do?
-                </Typography>
-              </Paper>
+              <Typography component="h2" variant="h4">
+                What would you like to do?
+              </Typography>
             </div>
           </Grid>
         </Grid>
