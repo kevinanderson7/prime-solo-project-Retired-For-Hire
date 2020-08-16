@@ -39,10 +39,10 @@ class LoginForm extends Component {
       <form className="formPanel" onSubmit={this.login}>
         <Grid
           container
-          alignItems="flex-start"
+          alignItems="center"
           justify="flex-start"
           direction="column"
-          spacing={1}
+          spacing={2}
         >
           <Typography gutterBottom variant="h4" component="h2">
             Log in
@@ -74,17 +74,19 @@ class LoginForm extends Component {
               onChange={this.handleInputChangeFor('password')}
             />
           </Grid>
-          <Grid item>
-            <Button
-              variant="contained"
-              color="primary"
-              className="log-in"
-              type="submit"
-              name="submit"
-              value="Log In"
-            >
-              Log In
-            </Button>
+          <Grid container justify="flex-end">
+            <Grid item>
+              <Button
+                variant="contained"
+                color="primary"
+                className="log-in"
+                type="submit"
+                name="submit"
+                value="Log In"
+              >
+                Log In
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       </form>

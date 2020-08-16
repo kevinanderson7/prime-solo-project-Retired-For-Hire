@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 //MaterialUI
-import { Button, TextField, Typography, Grid } from '@material-ui/core';
+import { Button, TextField, Typography, Grid, Box } from '@material-ui/core';
 
 class RegisterForm extends Component {
   state = {
@@ -40,10 +40,10 @@ class RegisterForm extends Component {
       <form className="formPanel" onSubmit={this.registerUser}>
         <Grid
           container
-          alignItems="flex-start"
+          alignItems="center"
           justify="flex-start"
           direction="column"
-          spacing={1}
+          spacing={2}
         >
           <Typography gutterBottom variant="h4" component="h2">
             Register User
@@ -109,17 +109,22 @@ class RegisterForm extends Component {
               onChange={this.handleInputChangeFor('email')}
             />
           </Grid>
-          <Grid item>
-            <Button
-              variant="contained"
-              color="primary"
-              className="register"
-              type="submit"
-              name="submit"
-              value="Register"
-            >
-              Register
-            </Button>
+
+          <Grid container justify="flex-end">
+            <Box m={1}>
+              <Grid item>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className="register"
+                  type="submit"
+                  name="submit"
+                  value="Register"
+                >
+                  Register
+                </Button>
+              </Grid>
+            </Box>
           </Grid>
         </Grid>
       </form>

@@ -12,19 +12,33 @@ function* addSkill(action) {
   }
 }
 
-function* addSeller(action) {
+function* getSkills(action) {
+  console.log(action.payload);
   try {
-    yield axios.post('/api/user/seller', action.payload);
-    const response = yield axios.get('/api/user/seller');
-    yield put({ type: 'SET_SELLER', payload: response.data });
+    const response = yield axios.get(
+      `/api/user/seller/skills/${action.payload.userId}`
+    );
+    console.log('response', response);
+    yield put({ type: 'SET_SKILLS', payload: response.data });
   } catch (error) {
-    console.log('Add seller post request failed', error);
+    console.log('getSkill error', error);
   }
 }
 
+// function* addSeller(action) {
+//   try {
+//     yield axios.post('/api/user/seller', action.payload);
+//     const response = yield axios.get('/api/user/seller');
+//     yield put({ type: 'SET_SELLER', payload: response.data });
+//   } catch (error) {
+//     console.log('Add seller post request failed', error);
+//   }
+// }
+
 function* sellerSaga() {
   yield takeLatest('ADD_SKILL', addSkill);
-  yield takeLatest('ADD_SELLER', addSeller);
+  yield takeLatest('GET_SKILLS', getSkills);
+  //   yield takeLatest('ADD_SELLER', addSeller);
 }
 
 export default sellerSaga;
