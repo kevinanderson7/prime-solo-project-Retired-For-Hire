@@ -15,11 +15,20 @@ function* addSkill(action) {
 function* getSkills(action) {
   console.log(action.payload);
   try {
+<<<<<<< HEAD
     const response = yield axios.get(
       `/api/user/seller/skills/${action.payload.userId}`
     );
     console.log('response', response);
     yield put({ type: 'SET_SKILLS', payload: response.data });
+=======
+    yield axios.post('/api/user/seller', action.payload);
+    console.log(action.payload);
+    const response = yield axios.get(
+      `/api/user/seller/${action.payload.userId}`
+    );
+    yield put({ type: 'SET_SELLER', payload: response.data });
+>>>>>>> 9f20ee40afbf029388477b5cfe14836bd3041cc3
   } catch (error) {
     console.log('getSkill error', error);
   }
