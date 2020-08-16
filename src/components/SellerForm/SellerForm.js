@@ -9,6 +9,8 @@ import {
   Typography,
   TextField,
   MenuItem,
+  Paper,
+  Box,
 } from '@material-ui/core';
 
 class SellerForm extends Component {
@@ -69,66 +71,83 @@ class SellerForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.addSeller}>
-        <Grid container alignItems="flex-start" spacing={2}>
-          <Grid item>
-            <TextField
-              variant="outlined"
-              id="outlined-basic"
-              type="text"
-              label="Add a skill"
-              name="skillName"
-              //   value={this.state.username}
-              required
-              onChange={this.handleInputChangeFor('skillName')}
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              variant="outlined"
-              select
-              value={this.state.category}
-              SelectProps={{}}
-              id="outlined-basic"
-              type="text"
-              label="Category"
-              helperText="Please select a skill category"
-              //   value={this.state.username}
-              required
-              onChange={this.handleInputChangeFor('category')}
-            >
-              {this.categories.map((item, index) => (
-                <MenuItem key={index} value={item.value}>
-                  {item.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item>
-            <TextField
-              variant="outlined"
-              id="outlined-basic"
-              type="number"
-              label="Hourly Wage"
-              name="price"
-              value={this.state.price}
-              required
-              helperText="In USD"
-              onChange={this.handleInputChangeFor('price')}
-            />
-          </Grid>
-          <Grid item>
-            <Button
-              onClick={this.handleSkillAdd}
-              variant="contained"
-              color="primary"
-              type="submit"
-            >
-              Add Skill
-            </Button>
-          </Grid>
+      <Grid container>
+        <Grid item>
+          <Paper elevation={3}>
+            <Box p={5}>
+              <form onSubmit={this.addSeller}>
+                <Grid container>
+                  <Grid item>
+                    <Typography gutterBottom variant="h4" component="h3">
+                      Add a new skill
+                    </Typography>
+                  </Grid>
+                </Grid>
+                <Grid container alignItems="flex-start" spacing={2}>
+                  <Grid item>
+                    <TextField
+                      variant="outlined"
+                      id="outlined-basic"
+                      type="text"
+                      label="Add a skill"
+                      name="skillName"
+                      //   value={this.state.username}
+                      required
+                      onChange={this.handleInputChangeFor('skillName')}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <TextField
+                      variant="outlined"
+                      select
+                      value={this.state.category}
+                      SelectProps={{}}
+                      id="outlined-basic"
+                      type="text"
+                      label="Category"
+                      helperText="Please select a skill category"
+                      //   value={this.state.username}
+                      required
+                      onChange={this.handleInputChangeFor('category')}
+                    >
+                      {this.categories.map((item, index) => (
+                        <MenuItem key={index} value={item.value}>
+                          {item.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  </Grid>
+                  <Grid item>
+                    <TextField
+                      variant="outlined"
+                      id="outlined-basic"
+                      type="number"
+                      label="Hourly Wage"
+                      name="price"
+                      value={this.state.price}
+                      required
+                      helperText="In USD"
+                      onChange={this.handleInputChangeFor('price')}
+                    />
+                  </Grid>
+                </Grid>
+                <Grid container justify="flex-end">
+                  <Grid item>
+                    <Button
+                      onClick={this.handleSkillAdd}
+                      variant="contained"
+                      color="primary"
+                      type="submit"
+                    >
+                      Add Skill
+                    </Button>
+                  </Grid>
+                </Grid>
+              </form>
+            </Box>
+          </Paper>
         </Grid>
-      </form>
+      </Grid>
     );
   }
 }

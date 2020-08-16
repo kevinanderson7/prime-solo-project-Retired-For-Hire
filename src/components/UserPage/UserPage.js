@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 //MaterialUI
 import {
   Typography,
-  Paper,
   Grid,
   Card,
   Button,
@@ -16,8 +15,7 @@ import {
   CardContent,
   CardMedia,
   Box,
-  Avatar,
-  IconButton,
+
   // Modal,
   // Backdrop,
   // Fade,
@@ -93,11 +91,11 @@ const UserPage = (props) => {
             Welcome, {props.store.user.first_name}!
           </Typography>
         </Grid>
-        <Grid item>
+        {/* <Grid item>
           <Typography gutterBottom variant="h6" component="p">
             Your ID is: {props.store.user.id}
           </Typography>
-        </Grid>
+        </Grid> */}
 
         <Grid>
           <LogOutButton className="log-in" />
@@ -115,7 +113,7 @@ const UserPage = (props) => {
         </Grid>
       </Box>
       <Grid container justify="space-evenly">
-        <Grid item xs={5}>
+        <Grid item xs={4}>
           <Box mt={4}>
             <Card elevation={3}>
               <CardActionArea>
@@ -126,19 +124,14 @@ const UserPage = (props) => {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Looking to Hire?
+                    Are you looking to hire?
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin commodo sapien dolor, in vehicula orci ullamcorper
-                    sed. Aenean tincidunt euismod massa, nec convallis massa
-                    sollicitudin a. Proin quis erat interdum sapien ornare
-                    euismod. Aenean luctus metus elit. Duis auctor arcu ac ante
-                    rutrum ultrices. Mauris ac facilisis ant
+                    Description text
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -187,8 +180,8 @@ const UserPage = (props) => {
             </Card>
           </Box>
         </Grid>
-        <Grid item xs={5}>
-          <Box mt={4}>
+        <Grid item xs={4}>
+          <Box mt={4} mb={10}>
             <Card elevation={3}>
               <CardActionArea>
                 <CardMedia
@@ -198,19 +191,14 @@ const UserPage = (props) => {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Or Retired?
+                    Or retired?
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin commodo sapien dolor, in vehicula orci ullamcorper
-                    sed. Aenean tincidunt euismod massa, nec convallis massa
-                    sollicitudin a. Proin quis erat interdum sapien ornare
-                    euismod. Aenean luctus metus elit. Duis auctor arcu ac ante
-                    rutrum ultrices. Mauris ac facilisis ant
+                    Description text
                   </Typography>
                 </CardContent>
               </CardActionArea>

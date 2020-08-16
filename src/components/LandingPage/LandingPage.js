@@ -12,7 +12,6 @@ import {
   Grid,
   Card,
   CardMedia,
-  CardContent,
 } from '@material-ui/core';
 
 // CUSTOM COMPONENTS
