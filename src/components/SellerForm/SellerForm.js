@@ -83,7 +83,7 @@ class SellerForm extends Component {
         <Grid item>
           <Paper elevation={3}>
             <Box p={5}>
-              <form onSubmit={this.addSeller}>
+              <form onSubmit={this.handleSkillAdd}>
                 <Grid container>
                   <Grid item>
                     <Typography gutterBottom variant="h4" component="h3">

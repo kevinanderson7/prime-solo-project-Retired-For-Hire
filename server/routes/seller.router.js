@@ -32,9 +32,9 @@ router.post('/seller/skills', (req, res) => {
 });
 
 router.get('/seller/skills/:id', (req, res) => {
-  const userId = req.params.userId;
+  const userId = req.params.id;
   console.log('req.params', userId);
-  const queryText = 'SELECT * FROM skills WHERE user_id = $1;';
+  const queryText = `SELECT * FROM skills WHERE user_id = $1;`;
   pool
     .query(queryText, [userId])
     .then((response) => {

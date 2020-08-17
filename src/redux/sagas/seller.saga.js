@@ -20,6 +20,7 @@ function* getSkills(action) {
     );
     console.log('response', response);
     yield put({ type: 'SET_SKILLS', payload: response.data });
+    console.log(response.data);
   } catch (error) {
     console.log('getSkill error', error);
   }
