@@ -3,7 +3,7 @@ body {
   margin: 0px;
   background-image: url('/images/background-image-2.jpg');
   background-size: 100%;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
 }
 
 .alert {

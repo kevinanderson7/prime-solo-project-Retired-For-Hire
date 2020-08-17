@@ -30,6 +30,7 @@ import BookingConfirmation from '../BookingConfirmation/BookingConfirmation';
 import Checkout from '../Checkout/Checkout';
 import ListingsPage from '../ListingsPage/ListingsPage';
 import SellerPage from '../SellerPage/SellerPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 const customTheme = createMuiTheme({
   palette: {
@@ -67,6 +68,7 @@ class App extends Component {
             <ProtectedRoute exact path="/checkout" component={Checkout} />
             <ProtectedRoute exact path="/listings" component={ListingsPage} />
             <ProtectedRoute exact path="/sellers" component={SellerPage} />
+            <ProtectedRoute exact path="/profile" component={ProfilePage} />
             <ProtectedRoute
               exact
               path="/booking-confirmation"

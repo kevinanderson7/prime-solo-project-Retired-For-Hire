@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import { withRouter } from 'react-router-dom';
 
 //MaterialUI
 import { IconButton, Avatar } from '@material-ui/core';
@@ -19,6 +20,7 @@ const Nav = (props) => {
   }
   const handleProfileClick = () => {
     console.log('clicking profile pic');
+    props.history.push('/profile');
   };
 
   return (
@@ -61,4 +63,4 @@ const Nav = (props) => {
   );
 };
 
-export default connect(mapStoreToProps)(Nav);
+export default connect(mapStoreToProps)(withRouter(Nav));

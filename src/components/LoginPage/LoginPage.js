@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import LoginForm from '../LoginForm/LoginForm';
 
+import './LoginPage.css';
 //MaterialUI
 import { Button } from '@material-ui/core';
 
 class LoginPage extends Component {
   render() {
     return (
-      <div>
+      <div className="login-page">
         <LoginForm />
 
         <center>
