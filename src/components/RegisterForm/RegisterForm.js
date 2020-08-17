@@ -46,7 +46,7 @@ class RegisterForm extends Component {
           spacing={2}
         >
           <Typography gutterBottom variant="h4" component="h2">
-            Register User
+            Register Here
           </Typography>
           {this.props.errors.registrationMessage && (
             <h3 className="alert" role="alert">

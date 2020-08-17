@@ -21,20 +21,28 @@ class SellerForm extends Component {
   };
   categories = [
     {
-      value: 'test category',
-      label: 'test category',
+      value: 'Finance',
+      label: 'Finance',
     },
     {
-      value: 'test category2',
-      label: 'test category2',
+      value: 'Human Resources',
+      label: 'Human Resources',
     },
     {
-      value: 'test category3',
-      label: 'test category3',
+      value: 'Fitness',
+      label: 'Fitness',
     },
     {
-      value: 'test category4',
-      label: 'test category4',
+      value: 'Legal',
+      label: 'Legal',
+    },
+    {
+      value: 'Writing',
+      label: 'Writing',
+    },
+    {
+      value: 'Administration',
+      label: 'Administration',
     },
   ];
   handleSkillAdd = (event) => {

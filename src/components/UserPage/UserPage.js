@@ -115,7 +115,7 @@ const UserPage = (props) => {
       <Grid container justify="space-evenly">
         <Grid item xs={4}>
           <Box mt={4}>
-            <Card elevation={3}>
+            <Card onClick={handleHireClick} elevation={3}>
               <CardActionArea>
                 <CardMedia
                   title="image of now hiring sign"
@@ -182,7 +182,7 @@ const UserPage = (props) => {
         </Grid>
         <Grid item xs={4}>
           <Box mt={4} mb={10}>
-            <Card elevation={3}>
+            <Card onClick={handleRetiredClick} elevation={3}>
               <CardActionArea>
                 <CardMedia
                   title="retired individual"

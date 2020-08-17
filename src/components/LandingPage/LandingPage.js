@@ -12,6 +12,7 @@ import {
   Grid,
   Card,
   CardMedia,
+  Paper,
 } from '@material-ui/core';
 
 // CUSTOM COMPONENTS
@@ -54,6 +55,7 @@ class LandingPage extends Component {
                 </Grid>
               </Box>
             </div>
+
             <div className="grid-col grid-col_4">
               <RegisterForm />
 
