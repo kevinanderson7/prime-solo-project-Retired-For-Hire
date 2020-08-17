@@ -102,8 +102,9 @@ class App extends Component {
               )}
             />
           </Switch>
-
-          <Footer />
+          <Box mt={3}>
+            <Footer />
+          </Box>
         </Router>
       </ThemeProvider>
     );

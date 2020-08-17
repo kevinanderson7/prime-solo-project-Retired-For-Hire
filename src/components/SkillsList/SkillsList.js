@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardContent,
   Typography,
+  Box,
 } from '@material-ui/core';
 
 class SkillsList extends Component {
@@ -40,7 +41,7 @@ class SkillsList extends Component {
     //   );
     // });
     return (
-      <div>
+      <Box m={3}>
         <Grid container spacing={3} alignItems="flex-start">
           {this.props.store.skillsReducer.map((item, index) => {
             return (
@@ -54,7 +55,7 @@ class SkillsList extends Component {
         {/* {this.props.store.skillsReducer.map((item, index) => (
           <p key={index}>{item.skill_name}</p>
         ))} */}
-      </div>
+      </Box>
     );
   }
 }

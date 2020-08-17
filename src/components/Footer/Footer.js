@@ -1,30 +1,32 @@
 import React from 'react';
 import './Footer.css';
+import { makeStyles } from '@material-ui/core/styles';
 
 //MaterialUI
-import { Typography, Grid } from '@material-ui/core';
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
+import { Typography, Grid, Box, AppBar } from '@material-ui/core';
 
-const Footer = () => (
-  <footer className="footer-class">
-    <div>
-      <Grid
-        container
-        direction="column-reverse"
-        justify="flex-start"
-        alignItems="center"
-      >
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    top: 'auto',
+    bottom: 0,
+    backgroundColor: 'black',
+    color: 'white',
+  },
+}));
+
+const Footer = () => {
+  const classes = useStyles();
+  return (
+    <AppBar className={classes.appBar}>
+      <Grid container justify="center" alignItems="center">
         <Grid item>
           <Typography component="h6" variant="body1">
             &copy; Retired For Hire
           </Typography>
         </Grid>
       </Grid>
-    </div>
-  </footer>
-);
+    </AppBar>
+  );
+};
 
 export default Footer;

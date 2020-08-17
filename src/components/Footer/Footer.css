@@ -7,12 +7,19 @@ footer {
   bottom: 0;
   width: 100%; */
   /* background-color: rgb(185, 111, 42); */
-  background-color: rgb(44, 121, 44);
+  /* background-color: rgb(44, 121, 44);
   padding-top: 20px;
   padding-bottom: 0px;
   position: fixed;
-  left: 0;
+
   bottom: 0;
   height: 60px;
-  width: 100%;
+  width: 100%; */
+
+  margin-top: calc(5% + 60px);
+  bottom: 0;
+}
+
+.footer-class {
+  margin-top: 50px;
 }
