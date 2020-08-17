@@ -8,6 +8,14 @@ import SellerForm from '../SellerForm/SellerForm';
 import SkillsList from '../SkillsList/SkillsList';
 
 class SellerPage extends Component {
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'GET_SKILLS',
+      payload: {
+        userId: this.props.store.user.id,
+      },
+    });
+  }
   state = {
     heading: 'Seller Page',
   };
@@ -17,30 +25,28 @@ class SellerPage extends Component {
   render() {
     return (
       <Box m={3}>
-        <Grid container justify="space-between">
-          <Grid item>
-            <Typography component="h2" variant="h4">
-              {this.state.heading}
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Button
-              onClick={this.handleBackClick}
-              variant="contained"
-              color="primary"
-            >
-              Back
-            </Button>
-          </Grid>
-        </Grid>
-        <Box mt={3}>
-          <Grid container>
+        <div>
+          <Grid container justify="space-between">
             <Grid item>
-              <SellerForm />
-              <SkillsList />
+              <Typography component="h2" variant="h4">
+                {this.state.heading}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Button
+                onClick={this.handleBackClick}
+                variant="contained"
+                color="primary"
+              >
+                Back
+              </Button>
             </Grid>
           </Grid>
-        </Box>
+
+          <SellerForm />
+
+          <SkillsList />
+        </div>
       </Box>
     );
   }

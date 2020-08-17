@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import SkillsListItem from '../SkillsListItem/SkillsListItem';
+
 import {
   Grid,
   Card,
@@ -11,12 +11,13 @@ import {
   Typography,
 } from '@material-ui/core';
 
-class SkillsList extends Component {
+class SkillsListItem extends Component {
   state = {
     heading: '',
   };
 
   render() {
+    const { skill } = this.props;
     // const skillsArray = this.props.store.skillsReducer.map((item, index) => {
     //   return (
     //     <Grid container spacing={3} key={item.id}>
@@ -41,22 +42,26 @@ class SkillsList extends Component {
     // });
     return (
       <div>
-        <Grid container spacing={3} alignItems="flex-start">
-          {this.props.store.skillsReducer.map((item, index) => {
-            return (
-              <Grid item xs={4} key={index}>
-                <SkillsListItem skill={item} index={index} {...this.props} />
-              </Grid>
-            );
-          })}
-        </Grid>
-        {/* {skillsArray} */}
-        {/* {this.props.store.skillsReducer.map((item, index) => (
-          <p key={index}>{item.skill_name}</p>
-        ))} */}
+        <Card>
+          <CardHeader
+            title={skill.skill_name}
+            titleTypographyProps={{
+              variant: 'h6',
+              component: 'h3',
+            }}
+            subheader={`${skill.category}`}
+            subheaderTypographyProps={{
+              variant: 'subtitle1',
+              component: 'span',
+            }}
+          />
+          <CardContent>
+            <Typography variant="body2" component="p"></Typography>
+          </CardContent>
+        </Card>
       </div>
     );
   }
 }
 
-export default connect(mapStoreToProps)(SkillsList);
+export default connect(mapStoreToProps)(SkillsListItem);

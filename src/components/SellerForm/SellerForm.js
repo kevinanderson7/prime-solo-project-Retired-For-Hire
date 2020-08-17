@@ -14,15 +14,15 @@ import {
 } from '@material-ui/core';
 
 class SellerForm extends Component {
-  componentDidMount() {
-    this.props.dispatch({
-      type: 'GET_SKILLS',
-      payload: {
-        userId: this.props.store.user.id,
-      },
-    });
-    console.log(this.props.store);
-  }
+  //   componentDidMount() {
+  //     this.props.dispatch({
+  //       type: 'GET_SKILLS',
+  //       payload: {
+  //         userId: this.props.store.user.id,
+  //       },
+  //     });
+  //     console.log(this.props.store);
+  //   }
   state = {
     skillName: '',
     category: '',
@@ -71,6 +71,7 @@ class SellerForm extends Component {
         userId: this.props.store.user.id,
       },
     });
+    console.log('setting state');
     this.setState({
       skillName: '',
       category: '',
