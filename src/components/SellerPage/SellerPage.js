@@ -5,6 +5,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 //MaterialUI
 import { Grid, Button, Typography, Box } from '@material-ui/core';
 import SellerForm from '../SellerForm/SellerForm';
+import SkillsList from '../SkillsList/SkillsList';
 
 class SellerPage extends Component {
   state = {
@@ -36,6 +37,7 @@ class SellerPage extends Component {
           <Grid container>
             <Grid item>
               <SellerForm />
+              <SkillsList />
             </Grid>
           </Grid>
         </Box>
