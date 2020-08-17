@@ -62,6 +62,11 @@ class SellerForm extends Component {
         userId: this.props.store.user.id,
       },
     });
+    this.setState({
+      skillName: '',
+      category: '',
+      price: '',
+    });
     this.props.dispatch({
       type: 'GET_SKILLS',
       payload: {
@@ -99,7 +104,7 @@ class SellerForm extends Component {
                       type="text"
                       label="Add a skill"
                       name="skillName"
-                      //   value={this.state.username}
+                      value={this.state.skillName}
                       required
                       onChange={this.handleInputChangeFor('skillName')}
                     />
