@@ -4,6 +4,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 
 //MaterialUI
 import { Button, Typography, Grid, Box } from '@material-ui/core';
+import ListingsList from '../ListingsList/ListingsList';
 
 class ListingsPage extends Component {
   componentDidMount() {
@@ -40,7 +41,9 @@ class ListingsPage extends Component {
           </Grid>
         </Grid>
         <Grid container>
-          <Grid item>List of sellers</Grid>
+          <Grid item>
+            <ListingsList />
+          </Grid>
         </Grid>
       </Box>
     );
