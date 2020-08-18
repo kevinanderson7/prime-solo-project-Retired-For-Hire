@@ -1,10 +1,19 @@
 .nav-title {
-  font-size: 24px;
-  font-weight: 700;
+  font-family: 'Montserrat';
+  font-size: 40px;
+  letter-spacing: 3px;
+  /* font-weight: 700; */
   display: inline-block;
-  color: #f2f2f2;
+  /* color: #f2f2f2; */
   padding-left: 10px;
+  color: white;
 }
+
+/* .ultra-font {
+  font-family: 'Ultra';
+  src: local('Ultra'), url('/images/Ultra.otf');
+  color: rgb(9, 187, 9);
+} */
 
 .nav {
   margin: 0 0 30px;

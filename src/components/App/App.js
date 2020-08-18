@@ -36,6 +36,9 @@ const customTheme = createMuiTheme({
   palette: {
     type: 'light',
   },
+  typography: {
+    fontFamily: ['Montserrat'],
+  },
 });
 
 class App extends Component {

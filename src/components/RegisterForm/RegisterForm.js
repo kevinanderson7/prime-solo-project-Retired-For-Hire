@@ -45,7 +45,12 @@ class RegisterForm extends Component {
           direction="column"
           spacing={2}
         >
-          <Typography gutterBottom variant="h4" component="h2">
+          <Typography
+            letterSpacing={6}
+            gutterBottom
+            variant="h4"
+            component="h2"
+          >
             Register Here
           </Typography>
           {this.props.errors.registrationMessage && (
