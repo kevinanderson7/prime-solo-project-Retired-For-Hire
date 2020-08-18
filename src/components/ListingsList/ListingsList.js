@@ -4,7 +4,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class ListingsList extends Component {
   state = {
-    heading: 'Class Component',
+    heading: '',
   };
 
   render() {

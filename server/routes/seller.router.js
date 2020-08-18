@@ -47,6 +47,21 @@ router.get('/seller/skills/:id', (req, res) => {
     });
 });
 
+router.get('/seller', (req, res) => {
+  const queryText = `SELECT user_id, skill_name, category, price, avatar, first_name, email_address FROM skills
+    JOIN "user" ON "skills".user_id= "user".id;`;
+  pool
+    .query(queryText)
+    .then((response) => {
+      res.send(response.rows);
+      console.log(response.rows);
+    })
+    .catch((err) => {
+      console.log('Error completing getAllListings query', err);
+      res.sendStatus(500);
+    });
+});
+
 // router.post('/seller/', (req, res) => {
 //   const userId = req.body.userId;
 

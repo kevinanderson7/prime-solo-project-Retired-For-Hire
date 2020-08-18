@@ -6,6 +6,12 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import { Button, Typography, Grid, Box } from '@material-ui/core';
 
 class ListingsPage extends Component {
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'GET_ALL_LISTINGS',
+    });
+  }
+
   state = {
     heading: 'Listings Page',
   };

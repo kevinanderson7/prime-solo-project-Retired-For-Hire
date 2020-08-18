@@ -36,9 +36,19 @@ function* getSkills(action) {
 //   }
 // }
 
+function* getAllListings(action) {
+  try {
+    const response = yield axios.get(`/api/user/seller`);
+    yield put({ type: 'SET_LISTINGS', payload: response.data });
+  } catch (error) {
+    console.log('getAllListings error', error);
+  }
+}
+
 function* sellerSaga() {
   yield takeLatest('ADD_SKILL', addSkill);
   yield takeLatest('GET_SKILLS', getSkills);
+  yield takeLatest('GET_ALL_LISTINGS', getAllListings);
   //   yield takeLatest('ADD_SELLER', addSeller);
 }
 
