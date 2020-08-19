@@ -79,9 +79,7 @@ class SellerForm extends Component {
     });
     this.props.dispatch({
       type: 'GET_SKILLS',
-      payload: {
-        userId: this.props.store.user.id,
-      },
+      payload: this.props.store.user.id,
     });
   };
 

@@ -62,6 +62,25 @@ router.get('/seller', (req, res) => {
     });
 });
 
+router.delete('/seller/skills/:id', (req, res) => {
+  console.log(req.params.id);
+  const skillId = req.params.id;
+  const queryText = `DELETE FROM "skills"
+      WHERE id = $1;`;
+
+  pool
+    .query(queryText, [skillId])
+    .then((response) => {
+      res.status(200);
+      res.send(response.rows[0]);
+    })
+    .catch((err) => {
+      console.log('DELETE skill query error:', err);
+      res.status(500);
+      res.send(err);
+    });
+});
+
 // router.post('/seller/', (req, res) => {
 //   const userId = req.body.userId;
 

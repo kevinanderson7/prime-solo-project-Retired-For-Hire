@@ -18,7 +18,11 @@ class SkillsListItem extends Component {
 
   handleDeleteClick = (event) => {
     console.log('clicking delete');
-    console.log(this.props.skill.id);
+    console.log(this.props.skill);
+    this.props.dispatch({
+      type: 'DELETE_SKILL',
+      payload: this.props.skill,
+    });
   };
 
   render() {

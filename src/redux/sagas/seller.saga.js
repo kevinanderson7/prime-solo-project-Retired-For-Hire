@@ -18,13 +18,26 @@ function* getSkills(action) {
   console.log(action.payload);
   try {
     const response = yield axios.get(
-      `/api/user/seller/skills/${action.payload.userId}`
+      `/api/user/seller/skills/${action.payload}`
     );
     console.log('response', response);
     yield put({ type: 'SET_SKILLS', payload: response.data });
     console.log(response.data);
   } catch (error) {
     console.log('getSkill error', error);
+  }
+}
+
+function* deleteSkill(action) {
+  console.log(action.payload);
+  try {
+    yield axios.delete(`/api/user/seller/skills/${action.payload.id}`);
+    yield put({
+      type: 'GET_SKILLS',
+      payload: action.payload.user_id,
+    });
+  } catch (err) {
+    console.log('error in deleteSkill:', err);
   }
 }
 
@@ -51,6 +64,7 @@ function* sellerSaga() {
   yield takeLatest('ADD_SKILL', addSkill);
   yield takeLatest('GET_SKILLS', getSkills);
   yield takeLatest('GET_ALL_LISTINGS', getAllListings);
+  yield takeLatest('DELETE_SKILL', deleteSkill);
   //   yield takeLatest('ADD_SELLER', addSeller);
 }
 
