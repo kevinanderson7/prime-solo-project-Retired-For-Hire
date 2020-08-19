@@ -73,6 +73,10 @@ const UserPage = (props) => {
     props.history.push('/sellers');
   };
 
+  const handleUserDashboardClick = () => {
+    props.history.push('/profile');
+  };
+
   // const handleProfileClick = () => {
   //   console.log('clicking profile pic');
   // };
@@ -102,7 +106,7 @@ const UserPage = (props) => {
           <LogOutButton className="log-in" />
         </Grid>
       </Grid>
-      <Box mt={3} mb={4}>
+      <Box mt={4} mb={4}>
         <Grid container justify="center" alignItems="center">
           <Grid item>
             <div className={classes.root}>
@@ -113,9 +117,10 @@ const UserPage = (props) => {
           </Grid>
         </Grid>
       </Box>
-      <Grid container justify="space-evenly">
-        <Grid item xs={4}>
-          <Box mt={4}>
+
+      <Grid container alignItems="flex-start" justify="space-evenly">
+        <Grid item xs={3}>
+          <Box mt={5}>
             <Card onClick={handleHireClick} elevation={3}>
               <CardActionArea>
                 <CardMedia
@@ -181,8 +186,9 @@ const UserPage = (props) => {
             </Card>
           </Box>
         </Grid>
-        <Grid item xs={4}>
-          <Box mt={4} mb={10}>
+
+        <Grid item xs={3}>
+          <Box mt={5} mb={10}>
             <Card onClick={handleRetiredClick} elevation={3}>
               <CardActionArea>
                 <CardMedia
@@ -248,6 +254,24 @@ const UserPage = (props) => {
                     </div>
                   </Fade>
                 </Modal> */}
+              </CardActions>
+            </Card>
+          </Box>
+        </Grid>
+        <Grid item xs={3}>
+          <Box mt={5}>
+            <Card onClick={handleUserDashboardClick} elevation={3}>
+              <CardActionArea>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Head to User Dashboard
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button onClick={handleUserDashboardClick}>
+                  GO TO DASHBOARD
+                </Button>
               </CardActions>
             </Card>
           </Box>

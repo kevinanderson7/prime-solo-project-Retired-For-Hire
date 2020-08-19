@@ -68,5 +68,25 @@ router.post('/logout', (req, res) => {
 //     .then(() => res.sendStatus(201))
 //     .catch(() => res.sendStatus(500));
 // });
+router.put('/user/profile/:id', (req, res) => {
+  const avatarData = req.body;
+  console.log(avatarData);
+  // const userId = req.params.id;
+  // const queryText = `UPDATE "user"
+  //   SET
+  //     avatar = $1
+  //   WHERE id = $2;`;
+
+  // pool
+  //   .query(queryText, [avatarData, userId])
+  //   .then((dbResponse) => {
+  //     res.status(200);
+  //   })
+  //   .catch((err) => {
+  //     console.log('PUT error:', err);
+  //     res.status(500);
+  //     res.send(err);
+  //   });
+});
 
 module.exports = router;

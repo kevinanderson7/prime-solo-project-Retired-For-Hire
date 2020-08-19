@@ -7,30 +7,65 @@ import {
   Box,
   Typography,
   Card,
-  CardActionArea,
   CardContent,
-  CardActions,
+  Button,
 } from '@material-ui/core';
 
 class ProfilePage extends Component {
   state = {
-    heading: 'Profile Page',
+    selectedFile: null,
+  };
+
+  fileSelectedHandler = (event) => {
+    this.setState({
+      selectedFile: event.target.files[0],
+    });
+  };
+
+  fileUploadHandler = () => {
+    console.log(this.state.selectedFile.name);
+    //   const uploadData = new FormData();
+    //   uploadData.append('image', this.state.selectedFile, this.state.selectedFile.name)
+    // this.props.dispatch({
+    //   type: 'UPDATE_AVATAR',
+    //   payload: this.state.selectedFile,
+    // });
+  };
+  handleBackClick = () => {
+    this.props.history.push('/admin');
   };
 
   render() {
     return (
       <div>
         <Box m={3}>
-          <Typography variant="h2">{this.state.heading}</Typography>
-          <Grid container justify="center" alignItems="center">
-            <Grid item xs={8}>
-              <Card elevation={3}>
-                <CardActionArea>
+          <Grid container justify="space-between">
+            <Grid item>
+              <Typography component="h2" variant="h4">
+                User Dashboard
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={this.handleBackClick}
+              >
+                Back
+              </Button>
+            </Grid>
+          </Grid>
+          <Box mt={6}>
+            <Grid container justify="center" alignItems="center">
+              <Grid item xs={8}>
+                <Card elevation={3}>
                   <img
                     alt="user avatar"
                     className="user-photo"
                     src={this.props.store.user.avatar}
                   ></img>
+                  {/* <button onClick={this.fileUploadHandler}>Upload</button> */}
+                  {/* <input type="file" onChange={this.fileSelectedHandler} /> */}
 
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
@@ -41,11 +76,10 @@ class ProfilePage extends Component {
                       Email: {this.props.store.user.email_address}
                     </Typography>
                   </CardContent>
-                </CardActionArea>
-                <CardActions></CardActions>
-              </Card>
+                </Card>
+              </Grid>
             </Grid>
-          </Grid>
+          </Box>
         </Box>
       </div>
     );

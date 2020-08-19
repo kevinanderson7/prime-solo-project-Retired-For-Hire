@@ -24,8 +24,20 @@ function* fetchUser() {
   }
 }
 
+function* updateAvatar(action) {
+  try {
+    yield axios.put(
+      `/api/creatures/details/${action.payload.id}`,
+      action.payload
+    );
+  } catch (err) {
+    console.log('error in updateAvatar', err);
+  }
+}
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
+  yield takeLatest('UPDATE_AVATAR', updateAvatar);
 }
 
 export default userSaga;
