@@ -1,10 +1,10 @@
-@font-face {
-  /* font-family: 'Ultra';
-  src: local('Ultra'), url('./fonts/Ultra.otf') format('opentype'); */
+/* @font-face {
+  font-family: 'Ultra';
+  src: local('Ultra'), url('./fonts/Ultra.otf') format('opentype');
   font-family: 'REZ';
   src: local('REZ'), url('./fonts/REZ.ttf') format('truetype');
-}
+} */
 
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap'); */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');

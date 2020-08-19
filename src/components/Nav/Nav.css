@@ -2,6 +2,7 @@
   font-family: 'Montserrat';
   font-size: 40px;
   letter-spacing: 3px;
+
   /* font-weight: 700; */
   display: inline-block;
   /* color: #f2f2f2; */
@@ -12,7 +13,7 @@
 /* .ultra-font {
   font-family: 'Ultra';
   src: local('Ultra'), url('/images/Ultra.otf');
-  color: rgb(9, 187, 9);
+  
 } */
 
 .nav {
@@ -31,6 +32,7 @@
   padding: 24px 10px;
   text-decoration: none;
   font-size: 15px;
+  font-family: 'Montserrat';
 
   /* these last two make the logout button in
   the nav bar look like another link */
