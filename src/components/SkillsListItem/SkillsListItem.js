@@ -2,14 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
-import {
-  Grid,
-  Card,
-  CardActionArea,
-  CardHeader,
-  CardContent,
-  Typography,
-} from '@material-ui/core';
+import { Card, CardHeader, CardContent, Typography } from '@material-ui/core';
 
 class SkillsListItem extends Component {
   state = {

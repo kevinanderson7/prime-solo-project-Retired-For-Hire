@@ -102,7 +102,7 @@ const UserPage = (props) => {
           <LogOutButton className="log-in" />
         </Grid>
       </Grid>
-      <Box mt={4}>
+      <Box mt={3} mb={4}>
         <Grid container justify="center" alignItems="center">
           <Grid item>
             <div className={classes.root}>

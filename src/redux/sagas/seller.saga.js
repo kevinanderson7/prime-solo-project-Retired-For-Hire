@@ -5,8 +5,10 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* addSkill(action) {
   try {
+    console.log('action.payload:', action.payload);
     yield axios.post('/api/user/seller/skills', action.payload);
     yield put({ type: 'FETCH_USER' });
+    yield put({ type: 'GET_SKILLS', payload: action.payload });
   } catch (error) {
     console.log('Add seller skill post request failed', error);
   }

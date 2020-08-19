@@ -10,7 +10,6 @@ import {
   CardActionArea,
   CardContent,
   CardActions,
-  CardHeader,
 } from '@material-ui/core';
 
 class ProfilePage extends Component {
@@ -23,25 +22,23 @@ class ProfilePage extends Component {
       <div>
         <Box m={3}>
           <Typography variant="h2">{this.state.heading}</Typography>
-          <Grid container justify="center">
-            <Grid item xs={4}>
+          <Grid container justify="center" alignItems="center">
+            <Grid item xs={8}>
               <Card elevation={3}>
                 <CardActionArea>
                   <img
+                    alt="user avatar"
                     className="user-photo"
                     src={this.props.store.user.avatar}
                   ></img>
 
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Or retired?
+                      Name: {this.props.store.user.first_name}{' '}
+                      {this.props.store.user.last_name}
                     </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      Description text
+                    <Typography variant="h5" component="p">
+                      Email: {this.props.store.user.email_address}
                     </Typography>
                   </CardContent>
                 </CardActionArea>

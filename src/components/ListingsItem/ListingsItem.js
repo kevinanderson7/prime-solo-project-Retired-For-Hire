@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 import {
-  Grid,
   Card,
   CardActionArea,
   CardHeader,
