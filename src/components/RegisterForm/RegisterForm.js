@@ -25,6 +25,7 @@ class RegisterForm extends Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
+        avatar: '/images/blank-profile-pic.png',
       },
     });
   }; // end registerUser

@@ -15,13 +15,17 @@ class ListingItem extends Component {
     heading: '',
   };
 
+  handleListingClick = () => {
+    console.log(this.props.listing.id);
+  };
+
   render() {
     const { listing } = this.props;
 
     return (
       <div>
         <Card>
-          <CardActionArea>
+          <CardActionArea onClick={this.handleListingClick}>
             <CardHeader>
               <Typography variant="h5" component="p">
                 {listing.first_name}

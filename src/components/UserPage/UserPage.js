@@ -198,7 +198,7 @@ const UserPage = (props) => {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Or retired?
+                    Or are you retired?
                   </Typography>
                   <Typography
                     variant="body2"
