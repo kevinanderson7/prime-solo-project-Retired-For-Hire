@@ -102,9 +102,9 @@ const UserPage = (props) => {
           </Typography>
         </Grid> */}
 
-        <Grid>
+        {/* <Grid>
           <LogOutButton className="log-in" />
-        </Grid>
+        </Grid> */}
       </Grid>
       <Box mt={4} mb={4}>
         <Grid container justify="center" alignItems="center">
@@ -121,7 +121,7 @@ const UserPage = (props) => {
       <Grid container alignItems="flex-start" justify="space-evenly">
         <Grid item xs={3}>
           <Box mt={5}>
-            <Card onClick={handleHireClick} elevation={3}>
+            <Card onClick={handleHireClick} elevation={10}>
               <CardActionArea>
                 <CardMedia
                   title="image of now hiring sign"
@@ -189,7 +189,7 @@ const UserPage = (props) => {
 
         <Grid item xs={3}>
           <Box mt={5} mb={10}>
-            <Card onClick={handleRetiredClick} elevation={3}>
+            <Card onClick={handleRetiredClick} elevation={10}>
               <CardActionArea>
                 <CardMedia
                   title="retired individual"
@@ -260,7 +260,7 @@ const UserPage = (props) => {
         </Grid>
         <Grid item xs={3}>
           <Box mt={5}>
-            <Card onClick={handleUserDashboardClick} elevation={3}>
+            <Card onClick={handleUserDashboardClick} elevation={10}>
               <CardActionArea>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -269,8 +269,8 @@ const UserPage = (props) => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button onClick={handleUserDashboardClick}>
-                  GO TO DASHBOARD
+                <Button color="primary" onClick={handleUserDashboardClick}>
+                  GO TO YOUR DASHBOARD
                 </Button>
               </CardActions>
             </Card>

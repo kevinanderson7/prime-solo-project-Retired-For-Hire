@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import { withRouter } from 'react-router-dom';
 import {
   Card,
   CardActionArea,
@@ -17,6 +17,11 @@ class ListingItem extends Component {
 
   handleListingClick = () => {
     console.log(this.props.listing.id);
+    this.props.dispatch({
+      type: 'SET_LISTING_CLICKED',
+      payload: this.props.listing,
+    });
+    this.props.history.push('/booking-confirmation');
   };
 
   render() {
@@ -24,7 +29,7 @@ class ListingItem extends Component {
 
     return (
       <div>
-        <Card>
+        <Card elevation={10}>
           <CardActionArea onClick={this.handleListingClick}>
             <CardHeader>
               <Typography variant="h5" component="p">
@@ -52,4 +57,4 @@ class ListingItem extends Component {
   }
 }
 
-export default connect(mapStoreToProps)(ListingItem);
+export default connect(mapStoreToProps)(withRouter(ListingItem));
