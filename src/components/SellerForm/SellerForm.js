@@ -27,6 +27,7 @@ class SellerForm extends Component {
     skillName: '',
     category: '',
     price: '',
+    errorStatus: false,
   };
   categories = [
     {
@@ -53,6 +54,26 @@ class SellerForm extends Component {
       value: 'Administration',
       label: 'Administration',
     },
+    {
+      value: 'Maintenance',
+      label: 'Maintenance',
+    },
+    {
+      value: 'Design',
+      label: 'Design',
+    },
+    {
+      value: 'Engineering',
+      label: 'Engineering',
+    },
+    {
+      value: 'Architecture',
+      label: 'Architecture',
+    },
+    {
+      value: 'Teaching',
+      label: 'Teaching',
+    },
   ];
   handleSkillAdd = (event) => {
     event.preventDefault();
@@ -62,25 +83,38 @@ class SellerForm extends Component {
     //     userId: this.props.store.user.id,
     //   },
     // });
-    this.props.dispatch({
-      type: 'ADD_SKILL',
-      payload: {
-        skillName: this.state.skillName,
-        category: this.state.category,
-        price: this.state.price,
-        userId: this.props.store.user.id,
-      },
-    });
-    console.log('setting state');
-    this.setState({
-      skillName: '',
-      category: '',
-      price: '',
-    });
-    this.props.dispatch({
-      type: 'GET_SKILLS',
-      payload: this.props.store.user.id,
-    });
+    if (
+      this.state.category === '' ||
+      this.state.skillName === '' ||
+      this.state.price === ''
+    ) {
+      this.setState({
+        ...this.state,
+        errorStatus: true,
+      });
+      return;
+    } else {
+      this.props.dispatch({
+        type: 'ADD_SKILL',
+        payload: {
+          skillName: this.state.skillName,
+          category: this.state.category,
+          price: this.state.price,
+          userId: this.props.store.user.id,
+        },
+      });
+      console.log('setting state');
+      this.setState({
+        skillName: '',
+        category: '',
+        price: '',
+        errorStatus: false,
+      });
+      this.props.dispatch({
+        type: 'GET_SKILLS',
+        payload: this.props.store.user.id,
+      });
+    }
   };
 
   handleInputChangeFor = (propertyName) => (event) => {
@@ -97,7 +131,7 @@ class SellerForm extends Component {
       <div>
         <Grid container>
           <Grid item>
-            <Paper elevation={3}>
+            <Paper elevation={10}>
               <Box p={5}>
                 <form onSubmit={this.handleSkillAdd}>
                   <Grid container>
@@ -117,6 +151,7 @@ class SellerForm extends Component {
                         name="skillName"
                         value={this.state.skillName}
                         required
+                        error={this.state.errorStatus}
                         onChange={this.handleInputChangeFor('skillName')}
                       />
                     </Grid>
@@ -131,6 +166,7 @@ class SellerForm extends Component {
                         label="Category"
                         helperText="Please select a skill category"
                         required
+                        error={this.state.errorStatus}
                         onChange={this.handleInputChangeFor('category')}
                       >
                         {this.categories.map((item, index) => (
@@ -149,6 +185,7 @@ class SellerForm extends Component {
                         name="price"
                         value={this.state.price}
                         required
+                        error={this.state.errorStatus}
                         helperText="In USD"
                         onChange={this.handleInputChangeFor('price')}
                       />

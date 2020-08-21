@@ -52,7 +52,7 @@ class SkillsListItem extends Component {
     // });
     return (
       <div>
-        <Card>
+        <Card elevation={10}>
           <Grid container justify="space-between" alignItems="flex-start">
             <Grid item xs={10}>
               <CardHeader

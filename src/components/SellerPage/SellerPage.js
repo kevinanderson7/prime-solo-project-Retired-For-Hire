@@ -24,10 +24,10 @@ class SellerPage extends Component {
     return (
       <Box m={3}>
         <div>
-          <Grid container justify="space-between">
+          <Grid container spacing={5} justify="space-between">
             <Grid item>
               <Typography component="h2" variant="h4">
-                {this.state.heading}
+                Your Seller Dashboard
               </Typography>
             </Grid>
             <Grid item>
