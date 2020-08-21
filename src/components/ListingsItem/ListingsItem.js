@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 import {
   Card,
   CardActionArea,
-  CardHeader,
   CardContent,
   Typography,
 } from '@material-ui/core';
@@ -31,23 +30,58 @@ class ListingItem extends Component {
       <div>
         <Card elevation={10}>
           <CardActionArea onClick={this.handleListingClick}>
-            <CardHeader>
-              <Typography variant="h5" component="p">
-                {listing.first_name}
-              </Typography>
-            </CardHeader>
             <CardContent>
-              <Typography variant="h5" component="p">
+              <Typography
+                display="inline"
+                color="primary"
+                variant="h5"
+                component="p"
+              >
+                Name:
+              </Typography>
+              <Typography display="inline" variant="h5">
+                {' '}
                 {listing.first_name}
               </Typography>
-              <Typography variant="h5" component="p">
-                Category: {listing.category}
+              <div></div>
+              <Typography
+                display="inline"
+                color="primary"
+                variant="h5"
+                component="p"
+              >
+                Category:
               </Typography>
-              <Typography variant="h6" component="p">
-                Skill: {listing.skill_name}
+
+              <Typography display="inline" variant="h5">
+                {' '}
+                {listing.category}
               </Typography>
-              <Typography variant="h5" component="p">
-                ${listing.price} per hour
+              <div></div>
+              <Typography
+                display="inline"
+                color="primary"
+                variant="h5"
+                component="p"
+              >
+                Skill:
+              </Typography>
+              <Typography display="inline" variant="h5">
+                {' '}
+                {listing.skill_name}
+              </Typography>
+              <div></div>
+              <Typography
+                display="inline"
+                color="primary"
+                variant="h5"
+                component="p"
+              >
+                Rate:
+              </Typography>
+              <Typography display="inline" variant="h5">
+                {' '}
+                ${listing.price}/hour
               </Typography>
             </CardContent>
           </CardActionArea>

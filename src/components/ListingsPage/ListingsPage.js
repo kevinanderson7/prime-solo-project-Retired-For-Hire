@@ -27,7 +27,7 @@ class ListingsPage extends Component {
         <Grid container justify="space-between">
           <Grid item>
             <Typography component="h2" variant="h4">
-              {this.state.heading}
+              Available For Hire:
             </Typography>
           </Grid>
           <Grid item>

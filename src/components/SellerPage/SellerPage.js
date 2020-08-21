@@ -24,12 +24,14 @@ class SellerPage extends Component {
     return (
       <Box m={3}>
         <div>
-          <Grid container spacing={5} justify="space-between">
-            <Grid item>
-              <Typography component="h2" variant="h4">
-                Your Seller Dashboard
-              </Typography>
-            </Grid>
+          <Grid container justify="space-between">
+            <Box mb={3}>
+              <Grid item>
+                <Typography component="h2" variant="h4">
+                  Your Seller Dashboard
+                </Typography>
+              </Grid>
+            </Box>
             <Grid item>
               <Button
                 onClick={this.handleBackClick}

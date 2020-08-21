@@ -16,6 +16,7 @@ import {
   useScrollTrigger,
   Slide,
   Grid,
+  Box,
 } from '@material-ui/core';
 
 function HideOnScroll(props) {
@@ -57,16 +58,16 @@ const Nav = (props) => {
   };
 
   return (
-    <div>
+    <Box mb={3}>
       <React.Fragment>
         <CssBaseline />
         <HideOnScroll {...props}>
           <AppBar>
             <Toolbar>
               <Grid container alignItems="center" justify="space-between">
-                <Grid item>
+                <Grid item xs={4}>
                   <Link to="/home">
-                    <Typography variant="h4" className="nav-title">
+                    <Typography noWrap variant="h4" className="nav-title">
                       Retired For Hire
                     </Typography>
                   </Link>
@@ -97,7 +98,7 @@ const Nav = (props) => {
                     <Link className="nav-link" to="/about">
                       About Us
                     </Link>
-                    <IconButton onClick={handleProfileClick}>
+                    <IconButton display="inline" onClick={handleProfileClick}>
                       <Avatar alt="avatar" src={props.store.user.avatar} />
                     </IconButton>
                   </div>
@@ -144,7 +145,7 @@ const Nav = (props) => {
       {/* </div> */}
       {/* </div> */}
       {/* // </AppBar> */}
-    </div>
+    </Box>
   );
 };
 

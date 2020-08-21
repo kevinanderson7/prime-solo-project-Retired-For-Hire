@@ -51,6 +51,7 @@ class App extends Component {
       <ThemeProvider theme={customTheme}>
         <Router>
           <Nav />
+
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />

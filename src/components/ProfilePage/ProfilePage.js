@@ -13,7 +13,7 @@ import {
 
 class ProfilePage extends Component {
   state = {
-    selectedFile: null,
+    editClicked: false,
   };
 
   fileSelectedHandler = (event) => {
@@ -33,6 +33,12 @@ class ProfilePage extends Component {
   };
   handleBackClick = () => {
     this.props.history.push('/admin');
+  };
+  handleEditClick = () => {
+    console.log('clicking edit');
+    this.setState({
+      editClicked: true,
+    });
   };
 
   render() {
@@ -58,24 +64,75 @@ class ProfilePage extends Component {
           <Box mt={6}>
             <Grid container justify="center" alignItems="center">
               <Grid item xs={8}>
-                <Card elevation={3}>
-                  <img
-                    alt="user avatar"
-                    className="user-photo"
-                    src={this.props.store.user.avatar}
-                  ></img>
-                  {/* <button onClick={this.fileUploadHandler}>Upload</button> */}
-                  {/* <input type="file" onChange={this.fileSelectedHandler} /> */}
+                <Card elevation={10}>
+                  <Box m={2}>
+                    <Grid
+                      container
+                      alignItems="flex-start"
+                      justify="space-between"
+                    >
+                      <Grid item>
+                        <img
+                          alt="user avatar"
+                          className="user-photo"
+                          src={this.props.store.user.avatar}
+                        ></img>
+                      </Grid>
+                      <Grid item>
+                        <Button
+                          variant="contained"
+                          size="small"
+                          display="inline"
+                          onClick={this.handleEditClick}
+                        >
+                          Edit
+                        </Button>
+                      </Grid>
+                    </Grid>
+                    {/* <button onClick={this.fileUploadHandler}>Upload</button> */}
+                    {/* <input type="file" onChange={this.fileSelectedHandler} /> */}
 
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Name: {this.props.store.user.first_name}{' '}
-                      {this.props.store.user.last_name}
-                    </Typography>
-                    <Typography variant="h5" component="p">
-                      Email: {this.props.store.user.email_address}
-                    </Typography>
-                  </CardContent>
+                    <CardContent>
+                      <Grid container direction="column" spacing={3}>
+                        <Grid item>
+                          <Typography
+                            display="inline"
+                            gutterBottom
+                            variant="h5"
+                            component="h2"
+                          >
+                            Name: {this.props.store.user.first_name}{' '}
+                            {this.props.store.user.last_name}
+                          </Typography>
+
+                          {/* <Button
+                          variant="contained"
+                          size="small"
+                          display="inline"
+                          onClick={this.handleEditClick}
+                        >
+                          Edit
+                        </Button> */}
+                        </Grid>
+                        <Grid item>
+                          <Grid item>
+                            <Typography variant="h5" component="p">
+                              Email: {this.props.store.user.email_address}
+                            </Typography>
+                          </Grid>
+                          {/* <Grid item>
+                              <Button
+                                variant="contained"
+                                size="small"
+                                display="inline"
+                              >
+                                Edit
+                              </Button>
+                            </Grid> */}
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </Box>
                 </Card>
               </Grid>
             </Grid>

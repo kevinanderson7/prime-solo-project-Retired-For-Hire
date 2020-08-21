@@ -9,6 +9,7 @@ import {
   Typography,
   Grid,
   Button,
+  Box,
 } from '@material-ui/core';
 
 class SkillsListItem extends Component {
@@ -53,36 +54,38 @@ class SkillsListItem extends Component {
     return (
       <div>
         <Card elevation={10}>
-          <Grid container justify="space-between" alignItems="flex-start">
-            <Grid item xs={10}>
-              <CardHeader
-                title={skill.skill_name}
-                titleTypographyProps={{
-                  variant: 'h6',
-                  component: 'h3',
-                }}
-                subheader={`${skill.category}`}
-                subheaderTypographyProps={{
-                  variant: 'subtitle1',
-                  component: 'span',
-                }}
-              />
+          <Box m={1}>
+            <Grid container justify="space-between" alignItems="flex-start">
+              <Grid item xs={10}>
+                <CardHeader
+                  title={skill.skill_name}
+                  titleTypographyProps={{
+                    variant: 'h6',
+                    component: 'h3',
+                  }}
+                  subheader={`${skill.category}`}
+                  subheaderTypographyProps={{
+                    variant: 'subtitle1',
+                    component: 'span',
+                  }}
+                />
+              </Grid>
+              <Grid item xs={2}>
+                <Button
+                  onClick={this.handleDeleteClick}
+                  size="small"
+                  variant="contained"
+                >
+                  X
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={2}>
-              <Button
-                onClick={this.handleDeleteClick}
-                size="small"
-                variant="contained"
-              >
-                X
-              </Button>
-            </Grid>
-          </Grid>
-          <CardContent>
-            <Typography variant="body2" component="p">
-              ${skill.price}/hour
-            </Typography>
-          </CardContent>
+            <CardContent>
+              <Typography variant="body2" component="p">
+                ${skill.price}/hour
+              </Typography>
+            </CardContent>
+          </Box>
         </Card>
       </div>
     );
