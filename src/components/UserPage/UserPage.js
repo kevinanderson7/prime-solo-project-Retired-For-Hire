@@ -138,6 +138,7 @@ const UserPage = (props) => {
                   component="img"
                   src="/images/retired-image.jpg"
                 />
+
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     Or are you retired?
@@ -165,6 +166,12 @@ const UserPage = (props) => {
           <Box mt={3}>
             <Card onClick={handleUserDashboardClick} elevation={10}>
               <CardActionArea>
+                <CardMedia
+                  title="dashboard image"
+                  component="img"
+                  src="/images/dashboard.jpg"
+                />
+
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     Head to User Dashboard
