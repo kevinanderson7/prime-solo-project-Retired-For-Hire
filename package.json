@@ -16,6 +16,7 @@
     "pg": "^8.3.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.8.6",
     "react-player": "^2.6.0",
     "react-redux": "^7.1.1",
