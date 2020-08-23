@@ -14,6 +14,21 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   res.send(req.user);
 });
 
+// router.get('/update/:id', rejectUnauthenticated, (req, res) => {
+//   const userId = req.params.id;
+//   console.log('req.params', userId);
+//   const queryText = `SELECT * FROM user WHERE id = $1;`;
+//   pool
+//     .query(queryText, [userId])
+//     .then((response) => {
+//       res.send(response.rows);
+//     })
+//     .catch((err) => {
+//       console.log('Error completing getUser query', err);
+//       res.sendStatus(500);
+//     });
+// });
+
 // Handles POST request with new user data
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
@@ -69,25 +84,29 @@ router.post('/logout', (req, res) => {
 //     .then(() => res.sendStatus(201))
 //     .catch(() => res.sendStatus(500));
 // });
-router.put('/user/profile/:id', (req, res) => {
-  const avatarData = req.body;
-  console.log(avatarData);
-  // const userId = req.params.id;
-  // const queryText = `UPDATE "user"
-  //   SET
-  //     avatar = $1
-  //   WHERE id = $2;`;
+router.put('/profile/:id', (req, res) => {
+  const userData = req.body;
+  console.log(userData);
+  const userId = req.params.id;
+  const queryText = `UPDATE "user" SET first_name = $1, last_name = $2, email_address = $3
+   WHERE id = $4;`;
 
-  // pool
-  //   .query(queryText, [avatarData, userId])
-  //   .then((dbResponse) => {
-  //     res.status(200);
-  //   })
-  //   .catch((err) => {
-  //     console.log('PUT error:', err);
-  //     res.status(500);
-  //     res.send(err);
-  //   });
+  pool
+    .query(queryText, [
+      userData.firstName,
+      userData.lastName,
+      userData.email,
+      userId,
+    ])
+    .then((response) => {
+      res.send(response.rows);
+      res.status(200);
+    })
+    .catch((err) => {
+      console.log('PUT error:', err);
+      res.status(500);
+      res.send(err);
+    });
 });
 
 module.exports = router;

@@ -24,20 +24,38 @@ function* fetchUser() {
   }
 }
 
-function* updateAvatar(action) {
+function* updateUserData(action) {
   try {
-    yield axios.put(
-      `/api/creatures/details/${action.payload.id}`,
+    const response = yield axios.put(
+      `/api/user/profile/${action.payload.id}`,
       action.payload
     );
+    // yield put({ type: 'GET_USER', payload: action.payload });
+    yield put({
+      type: 'FETCH_USER',
+      payload: response.data,
+    });
   } catch (err) {
-    console.log('error in updateAvatar', err);
+    console.log('error in updateUser', err);
   }
 }
 
+// function* getUser(action) {
+//   try {
+//     const response = yield axios.get(`/api/user/update/${action.payload.id}`);
+//     yield put({
+//       type: 'SET_USER',
+//       payload: response.data,
+//     });
+//   } catch (error) {
+//     console.log('error in getUser', error);
+//   }
+// }
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
-  yield takeLatest('UPDATE_AVATAR', updateAvatar);
+  yield takeLatest('UPDATE_USER', updateUserData);
+  // yield takeLatest('GET_USER', getUser);
 }
 
 export default userSaga;
