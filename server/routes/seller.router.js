@@ -49,7 +49,7 @@ router.get('/seller/skills/:id', (req, res) => {
 
 router.get('/seller', (req, res) => {
   const queryText = `SELECT skills.id, user_id, skill_name, category, price, avatar, first_name, email_address FROM skills
-    JOIN "user" ON "skills".user_id= "user".id;`;
+    JOIN "user" ON "skills".user_id= "user".id ORDER BY category ASC;`;
   pool
     .query(queryText)
     .then((response) => {
