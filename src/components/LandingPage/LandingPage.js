@@ -51,7 +51,7 @@ class LandingPage extends Component {
             </Card>
           </Grid>
         </Grid>
-        <Box mt={4}>
+        <Box mt={12}>
           <Grid container spacing={6} justify="flex-start" alignItems="center">
             <Grid item xs={4}>
               <Card elevation={3}>
