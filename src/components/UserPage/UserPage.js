@@ -20,42 +20,42 @@ import {
   // Modal,
   // Backdrop,
   // Fade,
-  makeStyles,
+  // makeStyles,
 } from '@material-ui/core';
 
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 300,
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-    border: '2px solid #000',
-  },
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(1),
-      width: theme.spacing(60),
-      textAlign: 'center',
-      height: theme.spacing(5),
-      padding: theme.spacing(2, 4, 3),
-      justifyConent: 'center',
-      alignItems: 'center',
-    },
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   modal: {
+//     display: 'flex',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     margin: 300,
+//   },
+//   paper: {
+//     backgroundColor: theme.palette.background.paper,
+//     boxShadow: theme.shadows[5],
+//     padding: theme.spacing(2, 4, 3),
+//     border: '2px solid #000',
+//   },
+//   root: {
+//     display: 'flex',
+//     flexWrap: 'wrap',
+//     '& > *': {
+//       margin: theme.spacing(1),
+//       width: theme.spacing(60),
+//       textAlign: 'center',
+//       height: theme.spacing(5),
+//       padding: theme.spacing(2, 4, 3),
+//       justifyConent: 'center',
+//       alignItems: 'center',
+//     },
+//   },
+// }));
 
 const UserPage = (props) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const handleHireClick = () => {
     props.history.push('/listings');
@@ -82,10 +82,14 @@ const UserPage = (props) => {
         </Grid> */}
       </Grid>
       <Grid container justify="space-between" alignItems="center">
-        <Grid item xs={12}>
-          <Typography gutterBottom component="h1" variant="h5" id="welcome">
-            Welcome, {props.store.user.first_name}!
-          </Typography>
+        <Grid item xs={3}>
+          <Card elevation={10}>
+            <CardContent>
+              <Typography component="h1" variant="h5" id="welcome">
+                Welcome, {props.store.user.first_name}!
+              </Typography>
+            </CardContent>
+          </Card>
         </Grid>
 
         {/* <Grid>
@@ -94,11 +98,15 @@ const UserPage = (props) => {
       </Grid>
       <Box mt={4} mb={2}>
         <Grid container justify="center" alignItems="center">
-          <Grid item xs={12}>
-            {/* <div className={classes.root}> */}
-            <Typography align="center" component="h2" variant="h4">
-              What would you like to do?
-            </Typography>
+          <Grid item xs={6}>
+            <Card elevation={10}>
+              <CardContent>
+                {/* <div className={classes.root}> */}
+                <Typography align="center" component="h2" variant="h4">
+                  What would you like to do?
+                </Typography>
+              </CardContent>
+            </Card>
             {/* </div> */}
           </Grid>
         </Grid>
@@ -122,7 +130,7 @@ const UserPage = (props) => {
               </CardActionArea>
               <CardActions>
                 <Button onClick={handleHireClick} size="small" color="primary">
-                  Learn More
+                  Head to Marketplace
                 </Button>
               </CardActions>
             </Card>
@@ -156,7 +164,7 @@ const UserPage = (props) => {
                   size="small"
                   color="primary"
                 >
-                  Learn More
+                  Head to Seller Dashboard
                 </Button>
               </CardActions>
             </Card>

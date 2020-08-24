@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 //MaterialUI
-import { Button, Typography, Grid, Box } from '@material-ui/core';
+import { Button, Typography, Grid, Box, ButtonGroup } from '@material-ui/core';
 import ListingsList from '../ListingsList/ListingsList';
 
 class ListingsPage extends Component {
@@ -21,6 +21,22 @@ class ListingsPage extends Component {
     this.props.history.push('/admin');
   };
 
+  handleNameClick = () => {
+    this.props.dispatch({
+      type: 'GET_LISTINGS_BY_NAME',
+    });
+  };
+  handleCategoryClick = () => {
+    this.props.dispatch({
+      type: 'GET_ALL_LISTINGS',
+    });
+  };
+  handlePriceClick = () => {
+    this.props.dispatch({
+      type: 'GET_LISTINGS_BY_PRICE',
+    });
+  };
+
   render() {
     return (
       <Box m={3}>
@@ -29,6 +45,19 @@ class ListingsPage extends Component {
             <Typography component="h2" variant="h4">
               Available For Hire:
             </Typography>
+          </Grid>
+          <Grid item>
+            <ButtonGroup size="small" aria-label="small outlined button group">
+              <Button onClick={this.handleNameClick} variant="contained">
+                Name
+              </Button>
+              <Button onClick={this.handleCategoryClick} variant="contained">
+                Category
+              </Button>
+              <Button onClick={this.handlePriceClick} variant="contained">
+                Price
+              </Button>
+            </ButtonGroup>
           </Grid>
           <Grid item>
             <Button

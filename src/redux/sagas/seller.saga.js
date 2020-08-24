@@ -60,11 +60,31 @@ function* getAllListings(action) {
   }
 }
 
+function* getListingsByName(action) {
+  try {
+    const response = yield axios.get(`/api/user/name`);
+    yield put({ type: 'SET_LISTINGS', payload: response.data });
+  } catch (error) {
+    console.log('getListingsByName error', error);
+  }
+}
+
+function* getListingsByPrice(action) {
+  try {
+    const response = yield axios.get(`/api/user/price`);
+    yield put({ type: 'SET_LISTINGS', payload: response.data });
+  } catch (error) {
+    console.log('getListingsByPrice error', error);
+  }
+}
+
 function* sellerSaga() {
   yield takeLatest('ADD_SKILL', addSkill);
   yield takeLatest('GET_SKILLS', getSkills);
   yield takeLatest('GET_ALL_LISTINGS', getAllListings);
   yield takeLatest('DELETE_SKILL', deleteSkill);
+  yield takeLatest('GET_LISTINGS_BY_NAME', getListingsByName);
+  yield takeLatest('GET_LISTINGS_BY_PRICE', getListingsByPrice);
   //   yield takeLatest('ADD_SELLER', addSeller);
 }
 

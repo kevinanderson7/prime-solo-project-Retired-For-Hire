@@ -59,7 +59,7 @@ class ProfilePage extends Component {
             <Grid container justify="space-between">
               <Grid item>
                 <Typography component="h2" variant="h4">
-                  User Dashboard
+                  {this.props.store.user.first_name}'s Dashboard
                 </Typography>
               </Grid>
               <Grid item>
@@ -144,7 +144,7 @@ class ProfilePage extends Component {
             <Grid container justify="space-between">
               <Grid item>
                 <Typography component="h2" variant="h4">
-                  User Dashboard
+                  {this.props.store.user.first_name}'s Dashboard
                 </Typography>
               </Grid>
               <Grid item>

@@ -81,6 +81,35 @@ router.delete('/seller/skills/:id', (req, res) => {
     });
 });
 
+router.get('/name', (req, res) => {
+  const queryText = `SELECT skills.id, user_id, skill_name, category, price, avatar, first_name, email_address FROM skills
+      JOIN "user" ON "skills".user_id= "user".id ORDER BY first_name ASC;`;
+  pool
+    .query(queryText)
+    .then((response) => {
+      res.send(response.rows);
+      console.log(response.rows);
+    })
+    .catch((err) => {
+      console.log('Error completing getListingsByName query', err);
+      res.sendStatus(500);
+    });
+});
+
+router.get('/price', (req, res) => {
+  const queryText = `SELECT skills.id, user_id, skill_name, category, price, avatar, first_name, email_address FROM skills
+      JOIN "user" ON "skills".user_id= "user".id ORDER BY price ASC;`;
+  pool
+    .query(queryText)
+    .then((response) => {
+      res.send(response.rows);
+      console.log('response.rows', response.rows);
+    })
+    .catch((err) => {
+      console.log('Error completing getListingsByPrice query', err);
+      res.sendStatus(500);
+    });
+});
 // router.post('/seller/', (req, res) => {
 //   const userId = req.body.userId;
 

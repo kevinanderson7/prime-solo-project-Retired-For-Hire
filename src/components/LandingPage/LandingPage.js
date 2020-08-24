@@ -6,16 +6,16 @@ import './LandingPage.css';
 
 //MaterialUI
 import {
-  Button,
   Typography,
   Box,
   Grid,
   Card,
   CardMedia,
+  CardContent,
 } from '@material-ui/core';
 
 // CUSTOM COMPONENTS
-import RegisterForm from '../RegisterForm/RegisterForm';
+// import RegisterForm from '../RegisterForm/RegisterForm';
 
 class LandingPage extends Component {
   state = {
@@ -30,49 +30,78 @@ class LandingPage extends Component {
     return (
       <Box m={3}>
         <Grid container>
-          <Typography gutterBottom component="h2" variant="h4">
-            {this.state.heading}
-          </Typography>
-          <div className="grid">
-            <div className="grid-col grid-col_8">
-              <Typography component="h3" variant="h5">
-                Who are we?
-              </Typography>
-              <Typography component="p" variant="body1">
-                We are a company that connects highly skilled retired
-                professionals with private individuals
-              </Typography>
-              <Box mt={4}>
-                <Grid item xs={6}>
-                  <Card elevation={3}>
-                    <CardMedia
-                      title="image of now hiring sign"
-                      component="img"
-                      src="/images/landing-page-private-individuals.jpg"
-                    />
-                  </Card>
-                </Grid>
-              </Box>
-            </div>
-
-            <div className="grid-col grid-col_4">
-              <RegisterForm />
-
-              <center>
-                <Typography component="h4" variant="h6">
-                  Already a Member?
+          {/* <div className="grid">
+            <div className="grid-col grid-col_8"> */}
+          <Grid item xs={8}>
+            <Card>
+              <CardContent>
+                <Typography gutterBottom component="h2" variant="h4">
+                  {this.state.heading}
                 </Typography>
-                <Button
-                  variant="contained"
-                  className="btn btn_sizeSm"
-                  onClick={this.onLogin}
-                >
-                  Login
-                </Button>
-              </center>
-            </div>
-          </div>
+                <Typography gutterBottom component="h3" variant="h5">
+                  Who are we?
+                </Typography>
+                <Typography component="p" variant="body1">
+                  We are a company that connects highly skilled retired
+                  professionals with private individuals. Whether you're looking
+                  to hire highly skilled professionals, or you're retired and
+                  looking to market your skills, this is the place for you!
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
         </Grid>
+        <Box mt={4}>
+          <Grid container spacing={6} justify="flex-start" alignItems="center">
+            <Grid item xs={4}>
+              <Card elevation={3}>
+                <CardMedia
+                  title="image of a couple"
+                  component="img"
+                  src="/images/landing-page-private-individuals.jpg"
+                />
+              </Card>
+            </Grid>
+            <Grid item xs={4}>
+              {/* <Box ml={15}> */}
+              <img
+                alt="arrow"
+                className="arrow"
+                component="img"
+                src="/images/arrow.png"
+              ></img>
+              {/* </Box> */}
+            </Grid>
+            {/* </div> */}
+            <Grid item xs={4}>
+              <Card elevation={3}>
+                <CardMedia
+                  title="image of a skilled worker"
+                  component="img"
+                  src="/images/landing-page-2.jpg"
+                />
+              </Card>
+            </Grid>
+          </Grid>
+        </Box>
+        {/* <div className="grid-col grid-col_4"> */}
+        {/* <Grid item>
+          {/* <RegisterForm /> */}
+        {/* <center>
+            <Typography component="h4" variant="h6">
+              Already a Member?
+            </Typography>
+            <Button
+              variant="contained"
+              className="btn btn_sizeSm"
+              onClick={this.onLogin}
+            >
+              Login
+            </Button>
+          </center> */}
+        {/* </Grid> */}
+        {/* </div> */}
+        {/* </div> */}
       </Box>
     );
   }

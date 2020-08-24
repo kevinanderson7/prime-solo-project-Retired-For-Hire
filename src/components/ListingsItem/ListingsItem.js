@@ -4,7 +4,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
 import {
   Card,
-  CardActionArea,
+  // CardActionArea,
   CardContent,
   Typography,
   Button,
