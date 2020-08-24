@@ -23,7 +23,6 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 //MaterialUI
 import { Typography, Box } from '@material-ui/core';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
 import './App.css';
 import Reviews from '../Reviews/Reviews';
 import BookingConfirmation from '../BookingConfirmation/BookingConfirmation';
@@ -57,7 +56,7 @@ class App extends Component {
             <Redirect exact from="/" to="/home" />
             {/* Visiting localhost:3000/about will show the about page.
             This is a route anyone can see, no login necessary */}
-            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/home" component={LandingPage} />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.

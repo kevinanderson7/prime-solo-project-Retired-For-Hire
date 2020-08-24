@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import ReactPlayer from 'react-player/youtube';
 import './LandingPage.css';
 
 //MaterialUI
@@ -83,6 +83,24 @@ class LandingPage extends Component {
               </Card>
             </Grid>
           </Grid>
+          <Box m={30}>
+            <Grid container justify="center">
+              <Grid item>
+                <Card elevation={10}>
+                  <CardContent>
+                    <Grid container justify="center">
+                      <Grid item>
+                        <Typography gutterBottom justify="center" variant="h5">
+                          Is Retirement Actually Bad For You?
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                    <ReactPlayer url="https://www.youtube.com/watch?v=3-9WYO_MQ20" />
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Box>
         </Box>
         {/* <div className="grid-col grid-col_4"> */}
         {/* <Grid item>
