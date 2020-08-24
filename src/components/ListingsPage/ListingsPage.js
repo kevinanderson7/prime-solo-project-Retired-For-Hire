@@ -43,7 +43,7 @@ class ListingsPage extends Component {
         <Grid container justify="space-between">
           <Grid item>
             <Typography component="h2" variant="h4">
-              Available For Hire:
+              Skills Marketplace:
             </Typography>
           </Grid>
           <Grid item>

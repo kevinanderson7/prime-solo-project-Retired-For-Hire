@@ -74,6 +74,10 @@ class SellerForm extends Component {
       value: 'Teaching',
       label: 'Teaching',
     },
+    {
+      value: 'Healthcare',
+      label: 'Healthcare',
+    },
   ];
   handleSkillAdd = (event) => {
     event.preventDefault();
