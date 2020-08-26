@@ -6,12 +6,6 @@
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
-);
-
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL,
     "avatar" varchar (300),
   	"first_name" varchar (60),
@@ -71,7 +65,7 @@ CREATE TABLE "sellers" (
 
 
 SELECT skills.id, user_id, skill_name, category, price, avatar, first_name, email_address FROM skills
-JOIN "user" ON "skills".user_id= "user".id;
+JOIN "user" ON "skills".user_id= "user".id ORDER BY category ASC;
 
 
 SELECT * FROM skills WHERE "user_id" = 2;
@@ -80,5 +74,9 @@ SELECT * FROM skills WHERE "skills".user_id = 2;
 
 SELECT skills.id FROM skills
 JOIN "user" ON "skills".user_id= "user".id;
+
+SELECT skills.id, user_id, skill_name, category, price, avatar, first_name, email_address FROM skills
+      JOIN "user" ON "skills".user_id= "user".id ORDER BY first_name ASC;
+
 
 
