@@ -182,7 +182,7 @@ const UserPage = (props) => {
 
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Head to User Dashboard
+                    Head to your dashboard
                   </Typography>
                 </CardContent>
               </CardActionArea>

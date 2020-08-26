@@ -206,6 +206,13 @@ class ProfilePage extends Component {
                               </Typography>
                             </Grid>
                           </Grid>
+                          <Grid item>
+                            <Grid item>
+                              <Typography variant="h5" component="p">
+                                Username: {this.props.store.user.username}
+                              </Typography>
+                            </Grid>
+                          </Grid>
                         </Grid>
                       </CardContent>
                     </Box>

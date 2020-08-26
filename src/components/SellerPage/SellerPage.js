@@ -3,7 +3,14 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import './SellerPage.css';
 //MaterialUI
-import { Grid, Button, Typography, Box } from '@material-ui/core';
+import {
+  Grid,
+  Button,
+  Typography,
+  Box,
+  Card,
+  CardContent,
+} from '@material-ui/core';
 import SellerForm from '../SellerForm/SellerForm';
 import SkillsList from '../SkillsList/SkillsList';
 
@@ -44,7 +51,17 @@ class SellerPage extends Component {
           </Grid>
 
           <SellerForm />
-
+          <Box ml={3} mt={4} mb={4}>
+            <Grid container>
+              <Grid item>
+                <Card>
+                  <CardContent>
+                    <Typography variant="h5">Your Marketed Skills:</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Box>
           <SkillsList />
         </div>
       </Box>

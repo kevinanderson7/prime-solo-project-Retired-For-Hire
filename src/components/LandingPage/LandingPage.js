@@ -28,7 +28,7 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <Box m={3}>
+      <Box m={6}>
         <Grid container>
           {/* <div className="grid">
             <div className="grid-col grid-col_8"> */}
@@ -58,7 +58,7 @@ class LandingPage extends Component {
                 <CardMedia
                   title="image of a couple"
                   component="img"
-                  src="/images/landing-page-private-individuals.jpg"
+                  src="/images/handshake.jpg"
                 />
               </Card>
             </Grid>

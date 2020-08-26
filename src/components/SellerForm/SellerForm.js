@@ -31,32 +31,16 @@ class SellerForm extends Component {
   };
   categories = [
     {
-      value: 'Finance',
-      label: 'Finance',
-    },
-    {
-      value: 'Human Resources',
-      label: 'Human Resources',
-    },
-    {
-      value: 'Fitness',
-      label: 'Fitness',
-    },
-    {
-      value: 'Legal',
-      label: 'Legal',
-    },
-    {
-      value: 'Writing',
-      label: 'Writing',
-    },
-    {
       value: 'Administration',
       label: 'Administration',
     },
     {
-      value: 'Maintenance',
-      label: 'Maintenance',
+      value: 'Architecture',
+      label: 'Architecture',
+    },
+    {
+      value: 'Carpentry',
+      label: 'Carpentry',
     },
     {
       value: 'Design',
@@ -67,16 +51,44 @@ class SellerForm extends Component {
       label: 'Engineering',
     },
     {
-      value: 'Architecture',
-      label: 'Architecture',
+      value: 'Finance',
+      label: 'Finance',
+    },
+    {
+      value: 'Fitness',
+      label: 'Fitness',
+    },
+    {
+      value: 'Healthcare',
+      label: 'Healthcare',
+    },
+    {
+      value: 'Human Resources',
+      label: 'Human Resources',
+    },
+    {
+      value: 'Landscaping',
+      label: 'Landscaping',
+    },
+    {
+      value: 'Legal',
+      label: 'Legal',
+    },
+    {
+      value: 'Maintenance',
+      label: 'Maintenance',
     },
     {
       value: 'Teaching',
       label: 'Teaching',
     },
     {
-      value: 'Healthcare',
-      label: 'Healthcare',
+      value: 'Technology',
+      label: 'Technology',
+    },
+    {
+      value: 'Writing',
+      label: 'Writing',
     },
   ];
   handleSkillAdd = (event) => {
