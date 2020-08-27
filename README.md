@@ -1,19 +1,8 @@
 ## Solo Project: Retired For Hire
 
-## Production Build
+Heroku link: https://retired-for-hire.herokuapp.com/#/home
 
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
-
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm start`
-- Navigate to `localhost:5000`
-
-## Deployment
-
-1. Create a new Heroku project
-1. Link the Heroku project to the project GitHub Repo
-1. Create an Heroku Postgres database
-1. Connect to the Heroku Postgres database from Postico
-1. Create the necessary tables
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
-1. In the deploy section, select manual deploy
+While studying psychology at UMKC, I identified a need for a platform to help combat depression that surfaces post-retirement for some individuals due to lack of engagement in the community, while also providing an avenue for retired individuals to market their skills for additional income.
+The app allows private parties to hire highly skilled individuals that are post-retirement by looking through services entered by the post-retirement users.
+I created it using React to build out the front end, Node.js/ Express for the server, PostgreSQL for the database, and a REST-style architecture.
+The technology used: React, Redux, Redux-Saga, Node, Express, PostgreSQL, and Material-UI
