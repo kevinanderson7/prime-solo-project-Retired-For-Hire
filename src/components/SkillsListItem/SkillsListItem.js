@@ -29,28 +29,6 @@ class SkillsListItem extends Component {
   render() {
     const { skill } = this.props;
 
-    // const skillsArray = this.props.store.skillsReducer.map((item, index) => {
-    //   return (
-    //     <Grid container spacing={3} key={item.id}>
-    //       <Grid key={item.id} xs={4} item>
-    //         <Card>
-    //           <CardActionArea onClick={this.handleClickDetails}>
-    //             <CardHeader />
-    //             <CardContent>
-    //               <Typography variant="h5" component="p">
-    //                 Category: {item.category}
-    //               </Typography>
-    //               <Typography variant="h6" component="p">
-    //                 Skill: {item.skill_name}
-    //               </Typography>
-    //             </CardContent>
-    //           </CardActionArea>
-    //         </Card>
-    //         {/* <p>{item.skill_name}</p> */}
-    //       </Grid>
-    //     </Grid>
-    //   );
-    // });
     return (
       <div>
         <Card elevation={10}>

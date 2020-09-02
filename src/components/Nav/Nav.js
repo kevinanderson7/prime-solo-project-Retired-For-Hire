@@ -21,9 +21,7 @@ import {
 
 function HideOnScroll(props) {
   const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
+
   const trigger = useScrollTrigger({ target: window ? window() : undefined });
 
   return (
@@ -35,10 +33,7 @@ function HideOnScroll(props) {
 
 HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
+
   window: PropTypes.func,
 };
 
@@ -109,42 +104,6 @@ const Nav = (props) => {
         </HideOnScroll>
         <Toolbar />
       </React.Fragment>
-      {/* // <AppBar position="static"> */}
-      {/* <div className="nav"> */}
-      {/* <Link to="/home">
-          <h2 className="nav-title">Retired For Hire</h2>
-        </Link> */}
-      {/* <div className="nav-right"> */}
-      {/* <Link className="nav-link" to={loginLinkData.path}> */}
-      {/* Show this link if they are logged in or not,
-          but call this link 'Home' if they are logged in,
-          and call this link 'Login / Register' if they are not */}
-      {/* {loginLinkData.text} */}
-      {/* </Link> */}
-      {/* Show the link to the info page and the logout button if the user is logged in */}
-      {/* {props.store.user.id && ( */}
-      {/* <>
-              <Link className="nav-link" to="/info">
-                Info Page
-              </Link>
-              <button
-                onClick={() => props.dispatch({ type: 'LOGOUT' })}
-                className="nav-link"
-              >
-                Log Out
-              </button>
-            </>
-          )}
-          {/* Always show this link since the about page is not protected */}
-      {/* <Link className="nav-link" to="/about">
-            About Us
-          </Link>
-          <IconButton onClick={handleProfileClick}>
-            <Avatar alt="avatar" src={props.store.user.avatar} />
-          </IconButton> */}
-      {/* </div> */}
-      {/* </div> */}
-      {/* // </AppBar> */}
     </Box>
   );
 };

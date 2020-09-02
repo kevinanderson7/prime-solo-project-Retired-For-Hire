@@ -30,8 +30,6 @@ class LandingPage extends Component {
     return (
       <Box m={6}>
         <Grid container>
-          {/* <div className="grid">
-            <div className="grid-col grid-col_8"> */}
           <Grid item xs={8}>
             <Card>
               <CardContent>
@@ -63,16 +61,14 @@ class LandingPage extends Component {
               </Card>
             </Grid>
             <Grid item xs={4}>
-              {/* <Box ml={15}> */}
               <img
                 alt="arrow"
                 className="arrow"
                 component="img"
                 src="/images/arrow.png"
               ></img>
-              {/* </Box> */}
             </Grid>
-            {/* </div> */}
+
             <Grid item xs={4}>
               <Card elevation={3}>
                 <CardMedia
@@ -102,24 +98,6 @@ class LandingPage extends Component {
             </Grid>
           </Box>
         </Box>
-        {/* <div className="grid-col grid-col_4"> */}
-        {/* <Grid item>
-          {/* <RegisterForm /> */}
-        {/* <center>
-            <Typography component="h4" variant="h6">
-              Already a Member?
-            </Typography>
-            <Button
-              variant="contained"
-              className="btn btn_sizeSm"
-              onClick={this.onLogin}
-            >
-              Login
-            </Button>
-          </center> */}
-        {/* </Grid> */}
-        {/* </div> */}
-        {/* </div> */}
       </Box>
     );
   }

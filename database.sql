@@ -13,42 +13,6 @@ CREATE TABLE "user" (
   	"email_address" varchar (200)
 );
 
-CREATE TABLE "sellers" (
-  "id" SERIAL PRIMARY KEY,
-  "first_name" varchar,
-  "last_name" varchar,
-  "avatar" varchar,
-  "email" varchar,
-  "password" varchar
-);
-
-CREATE TABLE "reviews" (
-  "id" SERIAL PRIMARY KEY,
-  "rating" int
-);
-
-CREATE TABLE "sellers_skills" (
-  "id" SERIAL PRIMARY KEY,
-  "seller_id" INT REFERENCES "sellers",
-  "skills_id" INT REFERENCES "skills"
-);
-
-CREATE TABLE "sellers_reviews" (
-  "id" SERIAL PRIMARY KEY,
-  "seller_id" INT REFERENCES "sellers",
-  "reviews_id" INT REFERENCES "reviews",
-  "user_id" INT REFERENCES "user"
-);
-
-CREATE TABLE "listings" (
-  "id" SERIAL PRIMARY KEY,
-  "user_id" int,
-  "seller_id" int,
-  "start_time" time,
-  "end_time" time,
-  "price_per_hour" int,
-  "active" boolean
-);
 
 CREATE TABLE "skills" (
   "id" SERIAL PRIMARY KEY,

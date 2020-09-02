@@ -11,10 +11,7 @@ import {
   Button,
 } from '@material-ui/core';
 import './BookingConfirmation.css';
-// Basic class component structure for React with default state
-// value setup. When making a new component be sure to replace
-// the component name TemplateClass with the name for the new
-// component.
+
 class BookingConfirmation extends Component {
   state = {
     heading: 'Booking Confirmation Page',

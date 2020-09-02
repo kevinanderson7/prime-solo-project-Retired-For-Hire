@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import LogOutButton from '../LogOutButton/LogOutButton';
+
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
 
@@ -16,47 +16,9 @@ import {
   CardContent,
   CardMedia,
   Box,
-
-  // Modal,
-  // Backdrop,
-  // Fade,
-  // makeStyles,
 } from '@material-ui/core';
 
-// this could also be written with destructuring parameters as:
-// const UserPage = ({ user }) => (
-// and then instead of `props.user.username` you could use `user.username`
-// const useStyles = makeStyles((theme) => ({
-//   modal: {
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     margin: 300,
-//   },
-//   paper: {
-//     backgroundColor: theme.palette.background.paper,
-//     boxShadow: theme.shadows[5],
-//     padding: theme.spacing(2, 4, 3),
-//     border: '2px solid #000',
-//   },
-//   root: {
-//     display: 'flex',
-//     flexWrap: 'wrap',
-//     '& > *': {
-//       margin: theme.spacing(1),
-//       width: theme.spacing(60),
-//       textAlign: 'center',
-//       height: theme.spacing(5),
-//       padding: theme.spacing(2, 4, 3),
-//       justifyConent: 'center',
-//       alignItems: 'center',
-//     },
-//   },
-// }));
-
 const UserPage = (props) => {
-  // const classes = useStyles();
-
   const handleHireClick = () => {
     props.history.push('/listings');
   };
@@ -68,19 +30,9 @@ const UserPage = (props) => {
     props.history.push('/profile');
   };
 
-  // const handleProfileClick = () => {
-  //   console.log('clicking profile pic');
-  // };
-
   return (
     <Box m={6}>
-      <Grid container justify="flex-end">
-        {/* <Grid item>
-          <IconButton onClick={handleProfileClick}>
-            <Avatar alt="avatar" src={props.store.user.avatar} />
-          </IconButton>
-        </Grid> */}
-      </Grid>
+      <Grid container justify="flex-end"></Grid>
       <Grid container justify="space-between" alignItems="center">
         <Grid item xs={3}>
           <Card elevation={10}>
@@ -91,23 +43,17 @@ const UserPage = (props) => {
             </CardContent>
           </Card>
         </Grid>
-
-        {/* <Grid>
-          <LogOutButton className="log-in" />
-        </Grid> */}
       </Grid>
       <Box mt={4} mb={2}>
         <Grid container justify="center" alignItems="center">
           <Grid item xs={6}>
             <Card elevation={10}>
               <CardContent>
-                {/* <div className={classes.root}> */}
                 <Typography align="center" component="h2" variant="h4">
                   What would you like to do?
                 </Typography>
               </CardContent>
             </Card>
-            {/* </div> */}
           </Grid>
         </Grid>
       </Box>
@@ -199,5 +145,4 @@ const UserPage = (props) => {
   );
 };
 
-// this allows us to use <App /> in index.js
 export default connect(mapStoreToProps)(withRouter(UserPage));

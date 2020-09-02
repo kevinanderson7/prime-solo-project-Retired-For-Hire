@@ -4,10 +4,6 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import ReactPlayer from 'react-player/youtube';
 import { Grid, Typography } from '@material-ui/core';
 
-// Basic class component structure for React with default state
-// value setup. When making a new component be sure to replace
-// the component name TemplateClass with the name for the new
-// component.
 class AboutPage extends Component {
   state = {
     heading: 'About Page',

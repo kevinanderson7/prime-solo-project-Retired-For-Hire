@@ -198,7 +198,6 @@ class Checkout extends Component {
                       <Box m={3}>
                         <Grid item>
                           <Button
-                            // onClick={this.handleContactSellerClick}
                             onClick={this.handleContactSellerClick}
                             variant="contained"
                             color="primary"

@@ -19,11 +19,11 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
+import './App.css';
 //MaterialUI
 import { Typography, Box } from '@material-ui/core';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import './App.css';
+
 import Reviews from '../Reviews/Reviews';
 import BookingConfirmation from '../BookingConfirmation/BookingConfirmation';
 import Checkout from '../Checkout/Checkout';

@@ -14,15 +14,6 @@ import {
 } from '@material-ui/core';
 
 class SellerForm extends Component {
-  //   componentDidMount() {
-  //     this.props.dispatch({
-  //       type: 'GET_SKILLS',
-  //       payload: {
-  //         userId: this.props.store.user.id,
-  //       },
-  //     });
-  //     console.log(this.props.store);
-  //   }
   state = {
     skillName: '',
     category: '',
@@ -93,12 +84,7 @@ class SellerForm extends Component {
   ];
   handleSkillAdd = (event) => {
     event.preventDefault();
-    // this.props.dispatch({
-    //   type: 'ADD_SELLER',
-    //   payload: {
-    //     userId: this.props.store.user.id,
-    //   },
-    // });
+
     if (
       this.state.category === '' ||
       this.state.skillName === '' ||
