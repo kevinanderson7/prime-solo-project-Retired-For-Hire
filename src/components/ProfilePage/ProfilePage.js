@@ -11,6 +11,7 @@ import {
   Button,
   TextField,
 } from '@material-ui/core';
+import ImageUpload from '../ImageUpload/ImageUpload';
 
 class ProfilePage extends Component {
   state = {
@@ -88,6 +89,7 @@ class ProfilePage extends Component {
                             className="user-photo"
                             src={this.props.store.user.avatar}
                           ></img>
+                          <ImageUpload />
                         </Grid>
                         <Grid item>
                           <Button
