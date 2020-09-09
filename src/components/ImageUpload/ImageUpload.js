@@ -23,8 +23,8 @@ class ImageUpload extends Component {
   };
   render() {
     const uploadOptions = {
-      //   server: 'https://retired-for-hire.herokuapp.com',
-      server: 'http://localhost:5000',
+      server: 'https://retired-for-hire.herokuapp.com',
+      // server: 'http://localhost:5000',
       //server: localhost:5000 to run locally instead of heroku
       signingUrlQueryParams: { uploadType: 'avatar' },
     };
