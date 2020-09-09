@@ -2,7 +2,7 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
-function* postImageUrl(action) {
+function* updateImageUrl(action) {
   try {
     const config = {
       headers: { 'Content-Type': 'application/json' },
@@ -28,7 +28,7 @@ function* postImageUrl(action) {
 }
 
 function* imageInfoSaga() {
-  yield takeLatest('UPDATE_USER_AVATAR', postImageUrl);
+  yield takeLatest('UPDATE_USER_AVATAR', updateImageUrl);
 }
 
 export default imageInfoSaga;
