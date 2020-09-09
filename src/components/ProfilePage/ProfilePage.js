@@ -89,7 +89,7 @@ class ProfilePage extends Component {
                             className="user-photo"
                             src={this.props.store.user.avatar}
                           ></img>
-                          <ImageUpload />
+                          <ImageUpload id={this.props.store.user.id} />
                         </Grid>
                         <Grid item>
                           <Button

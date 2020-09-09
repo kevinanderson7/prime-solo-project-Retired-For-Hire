@@ -26,6 +26,7 @@ function* fetchUser() {
 
 function* updateUserData(action) {
   try {
+    console.log(action.payload.id);
     const response = yield axios.put(
       `/api/user/profile/${action.payload.id}`,
       action.payload
