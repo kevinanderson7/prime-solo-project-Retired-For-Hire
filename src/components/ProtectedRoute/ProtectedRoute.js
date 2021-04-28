@@ -1,13 +1,10 @@
 import React from 'react';
-import {
-  Route,
-  Redirect,
-} from 'react-router-dom'
-import {connect} from 'react-redux';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import LoginPage from '../LoginPage/LoginPage';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
-// A Custom Wrapper Component -- This will keep our code DRY.
+// A Custom Wrapper Component -- This will keep the code DRY.
 // Responsible for watching redux state, and returning an appropriate component
 // API for this component is the same as a regular route
 
@@ -50,15 +47,13 @@ const ProtectedRoute = (props) => {
 
   // We return a Route component that gets added to our list of routes
   return (
-      <Route
-        // all props like 'exact' and 'path' that were passed in
-        // are now passed along to the 'Route' Component
-        {...otherProps}
-        component={ComponentToShow}
-      />
-  )
-}
+    <Route
+      // all props like 'exact' and 'path' that were passed in
+      // are now passed along to the 'Route' Component
+      {...otherProps}
+      component={ComponentToShow}
+    />
+  );
+};
 
-export default connect(mapStoreToProps)(ProtectedRoute)
-
-
+export default connect(mapStoreToProps)(ProtectedRoute);

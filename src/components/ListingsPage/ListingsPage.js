@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
-//MaterialUI
 import { Button, Typography, Grid, Box, ButtonGroup } from '@material-ui/core';
 import ListingsList from '../ListingsList/ListingsList';
 

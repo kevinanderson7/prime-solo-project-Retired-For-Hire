@@ -4,7 +4,6 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
 import {
   Card,
-  // CardActionArea,
   CardContent,
   Typography,
   Button,
@@ -30,7 +29,6 @@ class ListingItem extends Component {
     return (
       <Card elevation={10}>
         <Box m={1}>
-          {/* <CardActionArea onClick={this.handleListingClick}> */}
           <CardContent>
             <Typography
               display="inline"
@@ -95,7 +93,6 @@ class ListingItem extends Component {
               </Grid>
             </Grid>
           </CardContent>
-          {/* </CardActionArea> */}
         </Box>
       </Card>
     );

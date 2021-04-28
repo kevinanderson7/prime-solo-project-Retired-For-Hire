@@ -11,10 +11,7 @@ class ImageUpload extends Component {
     });
     console.log(info);
     console.log(info.fileUrl);
-    // this.props.dispatch({
-    //   type: 'POST_IMAGE_URL',
-    //   payload: info.fileUrl,
-    // });
+
     const avatarInfo = { avatarPath: info.fileUrl, avatarId: this.props.id };
     this.props.dispatch({
       type: 'UPDATE_USER_AVATAR',

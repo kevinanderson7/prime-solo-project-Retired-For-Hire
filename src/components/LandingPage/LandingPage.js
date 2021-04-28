@@ -4,7 +4,6 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import ReactPlayer from 'react-player/youtube';
 import './LandingPage.css';
 
-//MaterialUI
 import {
   Typography,
   Box,
@@ -13,9 +12,6 @@ import {
   CardMedia,
   CardContent,
 } from '@material-ui/core';
-
-// CUSTOM COMPONENTS
-// import RegisterForm from '../RegisterForm/RegisterForm';
 
 class LandingPage extends Component {
   state = {

@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
-//MaterialUI
 import { Button } from '@material-ui/core';
-
-// CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 class RegisterPage extends Component {

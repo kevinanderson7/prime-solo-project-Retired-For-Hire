@@ -5,7 +5,6 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
 
 import './UserPage.css';
-//MaterialUI
 import {
   Typography,
   Grid,

@@ -7,7 +7,6 @@ const sessionMiddleware = require('./modules/session-middleware');
 
 const passport = require('./strategies/user.strategy');
 
-// Route includes
 const userRouter = require('./routes/user.router');
 const sellerRouter = require('./routes/seller.router');
 const UploaderS3Router = require('react-dropzone-s3-uploader/s3router');

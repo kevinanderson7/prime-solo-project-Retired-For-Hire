@@ -14,21 +14,6 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   res.send(req.user);
 });
 
-// router.get('/update/:id', rejectUnauthenticated, (req, res) => {
-//   const userId = req.params.id;
-//   console.log('req.params', userId);
-//   const queryText = `SELECT * FROM user WHERE id = $1;`;
-//   pool
-//     .query(queryText, [userId])
-//     .then((response) => {
-//       res.send(response.rows);
-//     })
-//     .catch((err) => {
-//       console.log('Error completing getUser query', err);
-//       res.sendStatus(500);
-//     });
-// });
-
 // Handles POST request with new user data
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
@@ -63,27 +48,6 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200);
 });
 
-// router.post('/seller/skills', (req, res) => {
-//   const skillName = req.body.skillName;
-//   const category = req.body.category;
-//   const price = req.body.price;
-
-//   const queryText = `INSERT INTO "skills" (skill_name, category, price) VALUES ($1, $2, $3) RETURNING id;`;
-//   pool
-//     .query(queryText, [skillName, category, price])
-//     .then(() => res.sendStatus(201))
-//     .catch(() => res.sendStatus(500));
-// });
-
-// router.post('/seller/', (req, res) => {
-//   const userId = req.body.userId;
-
-//   const queryText = `INSERT INTO "sellers" (user_id) VALUES ($1);`;
-//   pool
-//     .query(queryText, [userId])
-//     .then(() => res.sendStatus(201))
-//     .catch(() => res.sendStatus(500));
-// });
 router.put('/profile/:id', (req, res) => {
   const userData = req.body;
   console.log(userData);

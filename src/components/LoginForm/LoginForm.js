@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
 
-//MaterialUI
 import { Button, TextField, Typography, Grid } from '@material-ui/core';
 
 class LoginForm extends Component {

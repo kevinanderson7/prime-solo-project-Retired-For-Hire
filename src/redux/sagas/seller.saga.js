@@ -41,16 +41,6 @@ function* deleteSkill(action) {
   }
 }
 
-// function* addSeller(action) {
-//   try {
-//     yield axios.post('/api/user/seller', action.payload);
-//     const response = yield axios.get('/api/user/seller');
-//     yield put({ type: 'SET_SELLER', payload: response.data });
-//   } catch (error) {
-//     console.log('Add seller post request failed', error);
-//   }
-// }
-
 function* getAllListings(action) {
   try {
     const response = yield axios.get(`/api/user/seller`);
@@ -85,7 +75,6 @@ function* sellerSaga() {
   yield takeLatest('DELETE_SKILL', deleteSkill);
   yield takeLatest('GET_LISTINGS_BY_NAME', getListingsByName);
   yield takeLatest('GET_LISTINGS_BY_PRICE', getListingsByPrice);
-  //   yield takeLatest('ADD_SELLER', addSeller);
 }
 
 export default sellerSaga;

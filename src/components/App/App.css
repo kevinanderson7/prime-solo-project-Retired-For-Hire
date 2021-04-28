@@ -55,7 +55,6 @@ input {
   background-color: #008183;
 }
 
-/* This line makes the "Register" and "Login" buttons look like links */
 .link-button {
   background: none;
   color: inherit;

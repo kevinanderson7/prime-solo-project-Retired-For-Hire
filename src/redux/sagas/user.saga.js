@@ -31,7 +31,6 @@ function* updateUserData(action) {
       `/api/user/profile/${action.payload.id}`,
       action.payload
     );
-    // yield put({ type: 'GET_USER', payload: action.payload });
     yield put({
       type: 'FETCH_USER',
       payload: response.data,
@@ -41,22 +40,9 @@ function* updateUserData(action) {
   }
 }
 
-// function* getUser(action) {
-//   try {
-//     const response = yield axios.get(`/api/user/update/${action.payload.id}`);
-//     yield put({
-//       type: 'SET_USER',
-//       payload: response.data,
-//     });
-//   } catch (error) {
-//     console.log('error in getUser', error);
-//   }
-// }
-
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
   yield takeLatest('UPDATE_USER', updateUserData);
-  // yield takeLatest('GET_USER', getUser);
 }
 
 export default userSaga;

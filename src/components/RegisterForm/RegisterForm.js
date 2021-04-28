@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
-//MaterialUI
 import { Button, TextField, Typography, Grid, Box } from '@material-ui/core';
 
 class RegisterForm extends Component {
